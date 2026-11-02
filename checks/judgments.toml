@@ -73,3 +73,31 @@ path = "evidence/state-of-the-art/review.md"
 question = "reads about equally as reference and how-to: one mode per document?"
 file = "80e6cace06ce"
 answer = "Reference: `The five features` is a table read for one cell. The `What was read` table says how the cells were found; it is not steps to follow."
+
+[[answer]]
+check = "document-mode"
+path = "README.fr.md"
+question = "reads about equally as reference and how-to: one mode per document?"
+file = "54044b22c1c7"
+answer = "Reference: la page d'accueil, lue pour `Où il se place`, le `Périmètre` et `Le premier travail`, puis les `Questions auxquelles la revue doit répondre`. Sa seule tâche, `Vérifier`, tient en deux commandes pour qui veut lancer les vérifications."
+
+[[answer]]
+check = "document-mode"
+path = "evidence/state-of-the-art/position.md"
+question = "reads about equally as explanation and reference: one mode per document?"
+file = "ab000eaec178"
+answer = "Reference to look up the choice: `Answer first` gives it, and the tables `Why beside, not on` and `Why not wholly alone` hold the reasons as rows, not a narrative."
+
+[[answer]]
+check = "document-mode"
+path = "evidence/state-of-the-art/review.md"
+question = "reads about equally as reference and how-to: one mode per document?"
+file = "78d1039b29f2"
+answer = "Reference: `The five features` is a table read for one cell. The `What was read` table says how the cells were found; it is not steps to follow."
+
+[[answer]]
+check = "name-content"
+path = "evidence/state-of-the-art/position.md"
+question = "the name 'position' and the opening are far apart in meaning (0.11): does the name predict the content?"
+file = "ab000eaec178"
+answer = "Yes: the name is the file's subject, and the opening states that position in one line, `Build beside all`. The low similarity score measures the vocabulary of the opening, not its meaning."
