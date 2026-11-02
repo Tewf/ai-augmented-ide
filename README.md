@@ -95,7 +95,7 @@ A first pass of 28 sources, read on 2026-11-02 ([evidence](evidence/state-of-the
 - **No open extension shows the project as a tree of topics, or a verdict beside what it checked.** Cline, Continue and Kilo Code each draw one chat panel. None uses the editor's tree view. The diagnostics they read go to the model.
 - **The person's questions and the memory exist in pieces.** Kilo Code has a question tool with options and a memory kept as files. Cline has a question tool and a memory by convention. Continue has rules files only.
 - **The field's problem is supervision.** In 20,574 agent sessions, 91.49% of visible resolutions needed an explicit user correction (secondary, from an abstract).
-- **The ground moves.** Two of the five open extensions were archived in 2026.
+- **The ground moves.** Two of the five open extensions are now archived. Their last pushes were in May 2026.
 - **The two missing parts need no agent extension.** The editor offers a tree view and a diagnostics list to any extension.
 
 The field calls the thing an AI IDE or an IDE coding agent. The name here matches loosely and stays.

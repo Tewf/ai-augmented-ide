@@ -95,7 +95,7 @@ Une première passe de 28 sources, lues le 2026-11-02 ([evidence](evidence/state
 - **Aucune extension libre ne montre le projet en arbre de sujets, ni un verdict à côté de ce qu'il vérifie.** Cline, Continue et Kilo Code dessinent chacune un seul panneau de discussion. Aucune n'emploie la vue en arbre de l'éditeur. Les diagnostics qu'elles lisent vont au modèle.
 - **Les questions de la personne et la mémoire existent par morceaux.** Kilo Code a un outil de question avec options et une mémoire gardée en fichiers. Cline a un outil de question et une mémoire par convention. Continue n'a que des fichiers de règles.
 - **Le problème du domaine est la supervision.** Sur 20 574 sessions d'agent, 91,49 % des résolutions visibles ont demandé une correction explicite de la personne (secondaire, d'après un résumé).
-- **Le terrain bouge.** Deux des cinq extensions libres ont été archivées en 2026.
+- **Le terrain bouge.** Deux des cinq extensions libres sont désormais archivées. Leurs dernières poussées datent de mai 2026.
 - **Les deux parties manquantes n'ont pas besoin d'une extension d'agent.** L'éditeur offre une vue en arbre et une liste de diagnostics à toute extension.
 
 Le domaine appelle cela un AI IDE ou un IDE coding agent. Le nom d'ici s'en approche et reste.

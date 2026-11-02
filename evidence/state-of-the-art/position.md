@@ -13,7 +13,7 @@ Build beside all. The two parts no extension has, the tree of topics and the ver
 | The missing parts do not live in an agent extension. The editor offers a tree view and a diagnostics list to any extension | no tree view call in the three extensions read; VS Code 2026 |
 | The three read keep their interface in one webview that another extension cannot extend | review, features 1 and 2 |
 | Cline 2026 shows no plugin interface in its source | review |
-| The base can fall away: two of five open extensions are archived | sources |
+| The base can fall away: two of five open extensions are now archived | sources |
 | Fewer lines are tied to one project's internal changes | judgment, not measured |
 
 ## Why not wholly alone

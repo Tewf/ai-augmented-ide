@@ -28,7 +28,7 @@ Step 3 of the review, second half. It gathers the limits of [state of the art](s
 | The self-report studies measure belief, and Becker 2025 shows belief and measurement can differ | feelings of better support are not evidence |
 | Every preprint was read by abstract and none was checked for peer review | the figures are leads, not findings |
 | Three extensions were read, each at one commit | a feature added a week later is missed |
-| Two extensions were archived in 2026 | the base may not outlive the design |
+| Two extensions are now archived, with their last pushes before this review | the base may not outlive the design |
 | No practitioner blog or forum was searched | the reports above come from studies of sessions and interviews |
 
 ## What would change the position
