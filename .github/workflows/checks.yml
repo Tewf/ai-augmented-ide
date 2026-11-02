@@ -1,0 +1,84 @@
+name: Check against reader-ergonomics
+
+# The checks live in Tewf/reader-ergonomics and are not copied here: CI checks out both
+# repositories and runs that one's checks on this one.
+# Tiers program and meaning run on every push and pull request; syntax and the online
+# reference check run weekly, and on demand.
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "57 6 * * 1"   # Mondays
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# A newer push to the same branch makes the older run moot.
+concurrency:
+  group: checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  every-push:
+    if: github.event_name != 'schedule'
+    runs-on: ubuntu-latest
+    env:
+      FASTEMBED_CACHE_PATH: /home/runner/.cache/fastembed   # outside the checked tree
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: repository
+          fetch-depth: 0   # co-change and the age of PROVISIONAL tags read the whole history
+      - uses: actions/checkout@v4
+        with:
+          repository: Tewf/reader-ergonomics
+          ref: b9732b9814c71768f722691f3c5049ec2b8ed378   # v1.19.2 (reader-ergonomics extending.md, Versions)
+          path: standard
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: standard/checks/meaning/requirements.txt
+      - name: Cache the embedding model
+        uses: actions/cache@v4
+        with:
+          path: /home/runner/.cache/fastembed
+          key: fastembed-${{ hashFiles('standard/checks/meaning/requirements.txt') }}
+      - name: Install the meaning tier
+        run: pip install -r standard/checks/meaning/requirements.txt
+      - name: Clone the family beside this repository, for bibliography-keys
+        run: |
+          for name in $(python3 -c "import tomllib; print(*tomllib.load(open('repository/checks/config.toml', 'rb'))['bibliography_keys']['family'])"); do
+            git clone --quiet --depth 1 "https://github.com/Tewf/$name" "$name"
+          done
+      - name: Check the repository, tiers program and meaning
+        run: python3 standard/checks/run.py repository --tiers program,meaning --judge flag
+      - name: List the questions left for judgment
+        if: always()
+        run: cat repository/checks/out/needs-judgment.md 2>/dev/null || echo "No questions for judgment."
+
+  weekly:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: repository
+      - uses: actions/checkout@v4
+        with:
+          repository: Tewf/reader-ergonomics
+          ref: b9732b9814c71768f722691f3c5049ec2b8ed378   # v1.19.2 (reader-ergonomics extending.md, Versions)
+          path: standard
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: standard/checks/syntax/requirements.txt
+      - name: Install the syntax tier
+        run: pip install -r standard/checks/syntax/requirements.txt
+      - name: Check the repository, tier syntax
+        run: python3 standard/checks/run.py repository --tiers syntax --judge flag
+      - name: Resolve every reference online
+        if: always()
+        run: python3 standard/checks/run.py repository --online --only references --judge none

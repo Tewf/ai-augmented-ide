@@ -1,0 +1,20 @@
+[[answer]]
+check = "tree-shape"
+path = "checks"
+question = "2 entries: fold into the parent folder, unless this folder is one record of a collection (a job, a chapter, a topic)."
+file = ""
+answer = "It stays: `checks` is the folder the extension contract names (reader-ergonomics extending.md, the layout table) for the config and the answers, and the standard's runner reads it there."
+
+[[answer]]
+check = "tree-shape"
+path = "decisions"
+question = "2 entries: fold into the parent folder, unless this folder is one record of a collection (a job, a chapter, a topic)."
+file = ""
+answer = "It stays: `decisions` is the folder the decision-record shape names for its records; it holds the README and record 0001 today, and grows one file per choice."
+
+[[answer]]
+check = "document-mode"
+path = "README.fr.md"
+question = "reads about equally as reference and how-to: one mode per document?"
+file = "11333e155d4d"
+answer = "Reference: la page d'accueil, lue pour `Où il se place`, le `Périmètre` et `Le premier travail`, puis les `Questions auxquelles la revue doit répondre`. Sa seule tâche, `Vérifier`, tient en deux commandes pour qui veut lancer les vérifications."

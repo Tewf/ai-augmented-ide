@@ -1,0 +1,46 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "**/*.qmd"
+    - "**/*.md"
+    - "!checks/"
+  resources:
+    - LICENSE
+    - LICENSES/
+    - "**/*.md"
+
+website:
+  title: "AI-augmented IDE"
+  site-url: "https://tewf.github.io/ai-augmented-ide/"
+  repo-url: "https://github.com/Tewf/ai-augmented-ide"
+  repo-actions: [source, issue]
+  page-navigation: true
+  navbar:
+    left:
+      - text: Decisions
+        href: decisions/README.md
+    right:
+      - text: The family
+        href: https://tewf.github.io/ai-augmented/
+      - text: The standard
+        href: https://tewf.github.io/reader-ergonomics/
+  sidebar:
+    style: docked
+    search: true
+    contents: auto
+
+# The stylesheet is reader-ergonomics' own, checked out into _standard/ at build time
+# (pages.yml), so the house style lives in one place; Quarto skips folders named with "_".
+format:
+  html:
+    from: markdown-smart
+    shift-heading-level-by: -1
+    html-math-method: mathml
+    toc: true
+    toc-depth: 2
+    theme:
+      light: cosmo
+      dark: darkly
+    css: _standard/site.css
+    link-external-newwindow: false

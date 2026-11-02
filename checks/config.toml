@@ -1,0 +1,29 @@
+# Merged onto reader-ergonomics' own config, table by table; a value here wins (extending.md, the interface).
+extends = "reader-ergonomics"
+
+# The standard's three, and the answers file: it changes with every file it answers for, so it co-changes by construction.
+[co_change]
+exempt = ["standard.md", "llms.txt", "checks/judgments.toml"]
+
+# The site loads the standard's own stylesheet (_standard/site.css, checked out in pages.yml), so there is none here
+# to measure; reader-ergonomics extending.md asks such a repository to list none.
+[readable_measure]
+stylesheets = []
+
+[sufficient_contrast]
+stylesheets = []
+
+# The headings the standard's decision-record shape requires (reader-ergonomics v1.19.2, shapes/decision-record.md).
+[shape_conformance]
+shapes = [{ name = "decision record", files = ["decisions/0*.md"], required = ["Context", "Decision", "Consequences", "See also"] }]
+
+# Path questions are answered with their path quoted, so the quotes check stays strict.
+[judgment_quotes]
+optional = []
+
+[bibliography_keys]
+# A key names one work across the family (reader-ergonomics decision 0003); CI clones each name beside this repository.
+family = ["reader-ergonomics",
+          "reader-ergonomics-topic",
+          "reader-ergonomics-blueprint"]
+shared_links = []

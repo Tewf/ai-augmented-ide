@@ -1,0 +1,15 @@
+# AI-augmented IDE
+
+> The software that implements ai-augmented-project inside the editor: a VS Code extension that shows the person the project as topics, the checkers' verdicts in place, and the questions that are theirs, and hands the model what the method says. Scope only; nothing is built before the method's design is approved.
+
+Each page's markdown source is served at the same path with a .md extension. This index is written by hand; AGENTS.md says to keep it in step.
+
+## The repository
+
+- [AI-augmented IDE](https://tewf.github.io/ai-augmented-ide/README.md): the scope, the first job and the questions its review must answer
+- [Decisions](https://tewf.github.io/ai-augmented-ide/decisions/README.md): one record per choice that shapes the repository
+
+## Contributing
+
+- [Contributing](https://tewf.github.io/ai-augmented-ide/AGENTS.md): rules for changing this repository
+- [Standard](https://tewf.github.io/reader-ergonomics/standard.md): the reader-ergonomics card this repository obeys

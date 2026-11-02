@@ -1,0 +1,42 @@
+name: Publish the site
+
+# CD: every push to master renders the Quarto site and deploys it to GitHub Pages.
+# The stylesheet comes from Tewf/reader-ergonomics, checked out beside the site, not copied.
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: Tewf/reader-ergonomics
+          ref: b9732b9814c71768f722691f3c5049ec2b8ed378   # v1.19.2 (reader-ergonomics extending.md, Versions)
+          path: _standard
+          sparse-checkout: site.css
+          sparse-checkout-cone-mode: false
+      - uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 1.8.26
+      - run: quarto render
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4

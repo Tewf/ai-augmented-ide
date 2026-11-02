@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: >-
+  If this repository helps you, you may cite it as below. It is an informal,
+  work-in-progress synthesis of published research, written with Claude, an AI
+  assistant by Anthropic. It is not an official standard, not peer-reviewed,
+  and not a new result.
+title: "ai-augmented-ide (work in progress)"
+abstract: >-
+  The software that implements ai-augmented-project inside the editor: a VS Code extension that shows the person the project as topics, the checkers' verdicts in place, and the questions that are theirs, and hands the model what the method says. Scope only; nothing is built before the method's design is approved.
+type: software
+authors:
+  - name: "Tewf"
+repository-code: "https://github.com/Tewf/ai-augmented-ide"
+license:
+  - Apache-2.0
+  - CC-BY-4.0
+keywords:
+  - VS Code extension
+  - coding agent
+  - AI-augmented work
+  - software design
+  - literature review
