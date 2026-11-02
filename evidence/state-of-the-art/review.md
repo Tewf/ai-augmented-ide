@@ -25,7 +25,7 @@ Each cell is a finding from the source, or "not read".
 
 | Feature | Cline 2026 | Continue 2026 | Kilo 2026 | Roo 2026; Copilot Chat 2026 |
 |---|---|---|---|---|
-| 1. Project as a tree of topics | no. One sidebar webview; no tree view call in the extension or its SDK | no. One webview, one console webview; no tree view call | no. One sidebar webview and an Agent Manager of sessions and worktrees; no tree view call in the extension | not read |
+| 1. Project as a tree of topics | no. One sidebar webview; no tree view created by the extension or its SDK. A stub file for a standalone runtime names the call and logs that it is stubbed | no. One webview, one console webview; no tree view call | no. One sidebar webview and an Agent Manager of sessions and worktrees; no tree view call in the extension | not read |
 | 2. Verdict beside the thing | no. Reads the editor's diagnostics to hand to the model; shows no verdict view | no. One method reads diagnostics for the model | no. Diagnostics are read by the code actions | not read |
 | 3. Questions kept apart | partly. A question tool exists and has its own handler, not a plain tool row; its options were not read | no question tool among the tool definitions | yes. A question tool with options, a typed answer, and a recommended option first | not read |
 | 4. Memory the person can read and edit | partly, by convention. The documentation tells the person to keep a Memory Bank of markdown files in the project | no memory. Rules files only | yes for reading: a memory package writes `project.md`, `environment.md`, `corrections.md` and decisions files, with commands to show and toggle it. Editing in the interface was not tested | not read |
