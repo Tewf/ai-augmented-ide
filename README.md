@@ -10,9 +10,8 @@ an open extension where one already does part of the job.
 
 This page in French: [README.fr.md](README.fr.md).
 
-> **Status (2026-11-02):** set up; nothing is written yet beyond the scope. The first job is a review of the state of
-> the art, not started, and nothing is built until the design of ai-augmented-project is approved. The name is
-> provisional. It is not an official standard, not a peer-reviewed study and not a new result.
+> **Status (2026-11-02):** the review of the state of the art is written and the baseline is named; nothing is built, and
+> nothing will be until the design of ai-augmented-project is approved. The name is provisional. It is not an official standard, not a peer-reviewed study and not a new result.
 >
 > **How it is made:** with Claude, an AI assistant by Anthropic, under the maintainer's direction, the way
 > reader-ergonomics was made. Corrections are welcome as issues.
@@ -67,7 +66,7 @@ digraph where_it_sits {
 
 ## The first job: a review of the state of the art
 
-Not started. It follows the order of a thesis review, and it is finished when it can name the baseline: the open
+Done as a first pass, in [evidence](evidence/state-of-the-art/). It follows the order of a thesis review, and it is finished when it can name the baseline: the open
 extension this one builds on, or beside, with the reason.
 
 1. **Frame:** what the field calls an editor extension that drives a coding agent, and which ones are open.
@@ -89,6 +88,30 @@ extension this one builds on, or beside, with the reason.
 - **The person's questions.** How are the decisions that are the person's shown, with options, so that none is asked
   twice?
 
+## What the review found
+
+A first pass of 28 sources, read on 2026-11-02 ([evidence](evidence/state-of-the-art/)).
+
+- **No open extension shows the project as a tree of topics, or a verdict beside what it checked.** Cline, Continue and Kilo Code each draw one chat panel. None uses the editor's tree view. The diagnostics they read go to the model.
+- **The person's questions and the memory exist in pieces.** Kilo Code has a question tool with options and a memory kept as files. Cline has a question tool and a memory by convention. Continue has rules files only.
+- **The field's problem is supervision.** In 20,574 agent sessions, 91.49% of visible resolutions needed an explicit user correction (secondary, from an abstract).
+- **The ground moves.** Two of the five open extensions were archived in 2026.
+- **The two missing parts need no agent extension.** The editor offers a tree view and a diagnostics list to any extension.
+
+The field calls the thing an AI IDE or an IDE coding agent. The name here matches loosely and stays.
+
+## The baseline
+
+**Kilo Code**, MIT, active on 2026-11-02 ([baseline](evidence/state-of-the-art/baseline.md), [decision 0002](decisions/0002-kilo-code-as-the-baseline.md)). The position is beside all: this repository adds only what no extension has.
+
+| Feature | Kilo Code holds | Gap |
+|---|---|---|
+| Tree of topics | no | all of it |
+| Verdict beside the thing | no | all of it |
+| Questions kept apart | a question tool with options | a list apart from the output |
+| Memory the person edits | files on disk | editing not tested |
+| Brief passed unchanged | not read | to read |
+
 ## Check it
 
 ```sh
@@ -105,6 +128,7 @@ also renders the site, [tewf.github.io/ai-augmented-ide](https://tewf.github.io/
 
 | Part | Summary |
 |---|---|
+| [evidence](evidence/) | the review of the state of the art, 28 sources, and the bibliography |
 | [decisions](decisions/) | one record per choice that shapes this repository, each opening with the decision in one sentence |
 
 ## Licence

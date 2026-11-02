@@ -18,3 +18,58 @@ path = "README.fr.md"
 question = "reads about equally as reference and how-to: one mode per document?"
 file = "11333e155d4d"
 answer = "Reference: la page d'accueil, lue pour `Où il se place`, le `Périmètre` et `Le premier travail`, puis les `Questions auxquelles la revue doit répondre`. Sa seule tâche, `Vérifier`, tient en deux commandes pour qui veut lancer les vérifications."
+[[answer]]
+check = "document-mode"
+path = "README.fr.md"
+question = "reads about equally as reference and how-to: one mode per document?"
+file = "5eaba4590d03"
+answer = "Reference: la page d'accueil, lue pour `Ce que la revue a trouvé`, `La référence` et le `Périmètre`. Sa seule tâche, `Vérifier`, tient en deux commandes."
+
+[[answer]]
+check = "document-mode"
+path = "evidence/state-of-the-art/position.md"
+question = "reads about equally as explanation and reference: one mode per document?"
+file = "59b8b75ca311"
+answer = "Reference to look up the choice: `Answer first` gives it, and the tables `Why beside, not on` and `Why not wholly alone` hold the reasons as rows, not a narrative."
+
+[[answer]]
+check = "document-mode"
+path = "evidence/state-of-the-art/review.md"
+question = "reads about equally as reference and how-to: one mode per document?"
+file = "c9254cafb319"
+answer = "Reference: `The five features` is a table read for one cell. The `What was read` table says how the cells were found; it is not steps to follow."
+
+[[answer]]
+check = "name-content"
+path = "evidence/state-of-the-art/frame.md"
+question = "the name 'frame' and the opening are far apart in meaning (0.14): does the name predict the content?"
+file = "14bd6faba399"
+answer = "Yes: in the review's vocabulary `Frame` is step 1, and the file holds `The problem in one sentence`, the field's names and the terms, which is what the step produces."
+
+[[answer]]
+check = "name-content"
+path = "evidence/state-of-the-art/position.md"
+question = "the name 'position' and the opening are far apart in meaning (0.11): does the name predict the content?"
+file = "59b8b75ca311"
+answer = "Yes: `Position` is step 4 of the review, and the file answers it with `Build beside all` and the reasons."
+
+[[answer]]
+check = "name-content"
+path = "evidence/state-of-the-art/state-of-the-art.md"
+question = "the name 'state' and the opening are far apart in meaning (0.04): does the name predict the content?"
+file = "dc4c02c8774a"
+answer = "Yes: the name is step 3's own, the field's term for a survey of what exists, and the file holds `What exists` and `What the studies say`."
+
+[[answer]]
+check = "document-mode"
+path = "README.fr.md"
+question = "reads about equally as reference and how-to: one mode per document?"
+file = "0a5f3995576f"
+answer = "Reference: la page d'accueil, lue pour `Ce que la revue a trouvé`, `La référence` et le `Périmètre`. Sa seule tâche, `Vérifier`, tient en deux commandes."
+
+[[answer]]
+check = "document-mode"
+path = "evidence/state-of-the-art/review.md"
+question = "reads about equally as reference and how-to: one mode per document?"
+file = "80e6cace06ce"
+answer = "Reference: `The five features` is a table read for one cell. The `What was read` table says how the cells were found; it is not steps to follow."

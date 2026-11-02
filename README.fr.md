@@ -10,9 +10,8 @@ bâtie sur une extension libre là où une fait déjà une partie du travail.
 
 Cette page en anglais : [README.md](README.md). Les deux versions suivent le même état.
 
-> **État (2026-11-02) :** mis en place ; rien n'est encore écrit au-delà du périmètre. Le premier travail est une revue
-> de l'état de l'art, non commencée, et rien n'est construit avant que la conception d'ai-augmented-project soit
-> approuvée. Le nom est provisoire. Ce n'est ni une norme officielle, ni une étude relue par des pairs, ni un résultat nouveau.
+> **État (2026-11-02) :** la revue de l'état de l'art est écrite et la référence est nommée ; rien n'est construit, et
+> rien ne le sera avant que la conception d'ai-augmented-project soit approuvée. Le nom est provisoire. Ce n'est ni une norme officielle, ni une étude relue par des pairs, ni un résultat nouveau.
 >
 > **Comment il est fait :** avec Claude, un assistant IA d'Anthropic, sous la direction du mainteneur, comme
 > reader-ergonomics. Les corrections sont bienvenues sous forme d'issues.
@@ -67,7 +66,7 @@ digraph where_it_sits {
 
 ## Le premier travail : une revue de l'état de l'art
 
-Non commencée. Elle suit l'ordre d'une revue de thèse, et elle est finie quand elle peut nommer la référence :
+Faite en première passe, dans [evidence](evidence/state-of-the-art/). Elle suit l'ordre d'une revue de thèse, et elle est finie quand elle peut nommer la référence :
 l'extension libre sur laquelle celle-ci se bâtit, ou à côté de laquelle, avec la raison.
 
 1. **Cadrer :** comment le domaine nomme une extension d'éditeur qui pilote un agent de code, et lesquelles sont libres.
@@ -89,6 +88,30 @@ l'extension libre sur laquelle celle-ci se bâtit, ou à côté de laquelle, ave
 - **Les questions de la personne.** Comment les décisions qui lui reviennent sont-elles montrées, avec des options,
   pour qu'aucune ne soit posée deux fois ?
 
+## Ce que la revue a trouvé
+
+Une première passe de 28 sources, lues le 2026-11-02 ([evidence](evidence/state-of-the-art/)).
+
+- **Aucune extension libre ne montre le projet en arbre de sujets, ni un verdict à côté de ce qu'il vérifie.** Cline, Continue et Kilo Code dessinent chacune un seul panneau de discussion. Aucune n'emploie la vue en arbre de l'éditeur. Les diagnostics qu'elles lisent vont au modèle.
+- **Les questions de la personne et la mémoire existent par morceaux.** Kilo Code a un outil de question avec options et une mémoire gardée en fichiers. Cline a un outil de question et une mémoire par convention. Continue n'a que des fichiers de règles.
+- **Le problème du domaine est la supervision.** Sur 20 574 sessions d'agent, 91,49 % des résolutions visibles ont demandé une correction explicite de la personne (secondaire, d'après un résumé).
+- **Le terrain bouge.** Deux des cinq extensions libres ont été archivées en 2026.
+- **Les deux parties manquantes n'ont pas besoin d'une extension d'agent.** L'éditeur offre une vue en arbre et une liste de diagnostics à toute extension.
+
+Le domaine appelle cela un AI IDE ou un IDE coding agent. Le nom d'ici s'en approche et reste.
+
+## La référence
+
+**Kilo Code**, MIT, active le 2026-11-02 ([baseline](evidence/state-of-the-art/baseline.md), [décision 0002](decisions/0002-kilo-code-as-the-baseline.md)). La position est à côté de toutes : ce dépôt n'ajoute que ce qu'aucune extension n'a.
+
+| Fonction | Kilo Code l'a | Écart |
+|---|---|---|
+| Arbre de sujets | non | tout |
+| Verdict à côté de la chose | non | tout |
+| Questions mises à part | un outil de question avec options | une liste à part de la sortie |
+| Mémoire que la personne édite | des fichiers sur disque | édition non testée |
+| Brief transmis tel quel | non lu | à lire |
+
 ## Vérifier
 
 ```sh
@@ -105,6 +128,7 @@ construit aussi le site, [tewf.github.io/ai-augmented-ide](https://tewf.github.i
 
 | Partie | Résumé |
 |---|---|
+| [evidence](evidence/) | la revue de l'état de l'art, 28 sources, et la bibliographie |
 | [decisions](decisions/) | une fiche par choix qui façonne ce dépôt, chacune ouvrant sur la décision en une phrase |
 
 ## Licence

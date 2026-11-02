@@ -18,6 +18,8 @@ website:
   page-navigation: true
   navbar:
     left:
+      - text: Evidence
+        href: evidence/README.md
       - text: Decisions
         href: decisions/README.md
     right:
