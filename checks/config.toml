@@ -27,3 +27,7 @@ family = ["reader-ergonomics",
           "reader-ergonomics-topic",
           "reader-ergonomics-blueprint"]
 shared_links = []
+
+# The spike's installed packages and build output are not this repository's files.
+[scope]
+exclude = ["spike/node_modules/", "spike/out/"]

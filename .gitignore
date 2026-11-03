@@ -13,3 +13,8 @@ checks/out/
 **/*.quarto_ipynb
 # The standard checked out at build time for its stylesheet (pages.yml)
 _standard/
+
+# The spike: dependencies and build output
+node_modules/
+out/
+spike/out/
