@@ -11,12 +11,13 @@ W=$(realpath -m "$1"); N=${2:-5}
 KILO=${KILO:-$HOME/.vscode/extensions/kilocode.kilo-code-7.8.18-linux-x64/bin/kilo}
 MODEL=${MODEL:-local-server/qwen2.5:7b-instruct}
 mkdir -p "$W/xdg/config/kilo" "$W/xdg/data" "$W/xdg/state" "$W/xdg/cache"
-cp "$HERE/kilo.jsonc" "$W/xdg/config/kilo/kilo.jsonc"
+cp "$HERE/${CONFIG:-kilo.jsonc}" "$W/xdg/config/kilo/kilo.jsonc"
 [ -d "$HOME/.cache/kilo" ] && cp -r "$HOME/.cache/kilo" "$W/xdg/cache/"   # the model list, so no fetch is needed
 export XDG_CONFIG_HOME=$W/xdg/config XDG_DATA_HOME=$W/xdg/data XDG_STATE_HOME=$W/xdg/state XDG_CACHE_HOME=$W/xdg/cache
 # Anything that is not local fails at once: the proxy address is a closed port.
+# CLOUD=host lets that one host through (the key itself comes from ANTHROPIC_API_KEY in the environment, never a file).
 export HTTP_PROXY=http://127.0.0.1:9 HTTPS_PROXY=http://127.0.0.1:9 http_proxy=http://127.0.0.1:9 https_proxy=http://127.0.0.1:9
-export NO_PROXY=127.0.0.1,localhost no_proxy=127.0.0.1,localhost KILO_TELEMETRY_LEVEL=off
+export NO_PROXY=127.0.0.1,localhost${CLOUD:+,$CLOUD} no_proxy=127.0.0.1,localhost${CLOUD:+,$CLOUD} KILO_TELEMETRY_LEVEL=off
 for i in $(seq 1 "$N"); do
   rm -rf "$W/p$i"; cp -r "$HERE/../../fixtures/project" "$W/p$i"
   ( cd "$W/p$i" && timeout 1500 "$KILO" run -m "$MODEL" -f .handover/note.md --format json \

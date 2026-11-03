@@ -4,7 +4,7 @@ All five measures of the design's decision 5 were run. Nothing in the spike is s
 
 - Measures 1 to 3 passed.
 - Measure 4 answered no, which the design provides for.
-- Measure 5 failed on a local model, and the design says that sends it back to decision 3.
+- Measure 5 failed on a local model and passed on two cloud models (5 of 5 each); the cloud rerun is below the local result.
 
 **Date.** 2026-11-03. **Shape:** [design document](https://github.com/Tewf/reader-ergonomics-software-design/blob/48b497ba591e9d6ffc962b1d08448930fa8158de/shapes/design-document.md), decision 5 of [the design](../design/extension.md).
 
@@ -19,7 +19,7 @@ repository, [ai-augmented-project](https://github.com/Tewf/ai-augmented-project)
 | 2 | Does every verdict arrive? | the counts are equal, each on the named line | 14 of 14 and 44 of 44, all on the named line | **pass** |
 | 3 | Is the display fast enough? | under 2 s on both corpora | median 1.5 ms and 1.7 ms; worst 2.9 ms and 3.1 ms | **pass** |
 | 4 | Do the baseline's commands take an argument? | the brief is attached in 5 of 5 trials, or the answer is no and the person attaches it | attached in 0 of 5 for New Task and 0 of 5 for Add to Context (0 of 10 more with a file address) | **no**: the person attaches the note |
-| 5 | Does the agent read the originals first? | 4 of 5 sessions or more | 0 of 5 (first reply) and 2 of 5 (first turn), one local model | **fail** |
+| 5 | Does the agent read the originals first? | 4 of 5 sessions or more | local model: 0 of 5 (first reply) and 2 of 5 (first turn); `claude-haiku-5-5`: 5 of 5; `claude-sonnet-5-5`: 5 of 5 (first reply) | **fail** locally, **pass** on both cloud models |
 
 ## What each number is
 
@@ -92,6 +92,26 @@ file is read, the tree rebuilt and the diagnostics placed. 30 trials per corpus.
   stronger model may do better. The measure says what this setup does, not what the baseline can do.
 - The sessions' data (one file per session, and the printout) is in the job folder, not in this repository.
 
+**Measure 5, cloud rerun.** Same baseline, fixture, note, message and extraction as above, on 2026-11-03, with the
+baseline's Anthropic provider (`kilo-cloud.jsonc`, `CONFIG=kilo-cloud.jsonc CLOUD=api.anthropic.com run.sh`). The key
+came from the environment variable the provider reads and is in no file; the proxy block stayed closed for every host but
+`api.anthropic.com`.
+
+| Model | First reply | First turn | Whole session | Start file read before the first text | Cost reported |
+|---|---|---|---|---|---|
+| `claude-haiku-5-5` | **5 of 5** | 5 of 5 | 5 of 5 | 5 of 5 | 0.017 USD for the five sessions |
+| `claude-sonnet-5-5` | **5 of 5** | 5 of 5 | 5 of 5 | 5 of 5 | 0.263 USD for the five sessions |
+
+- Both are over the threshold of 4 of 5, on the strictest count. In the first session of each, the first reply cites all
+  three commands of the start file.
+- The cost is the baseline's own computed figure from its database, about 0.8 million input tokens (cache reads
+  included) and under 5000 output tokens per model; it is not the provider's invoice.
+- A one-session pilot ran first to check that the provider worked and is not counted.
+- The gap with the local result is the model: a local 7B and an 8B do not open the start file, these two do. The
+  design's decision 3 is not sent back by this measure for a cloud model. Limits: five sessions per model, one fixture,
+  the baseline's default agent.
+- The sessions' data is in the job folder, not in this repository.
+
 ## What runs and what is rough
 
 | Part | State |
@@ -126,7 +146,7 @@ STANDARD=../checks/out/standard/checks PYTHON=python3 npm run measure
 
 Measures 4 and 5 need the baseline installed. Measure 4 starts the editor with `measure/kilo-trials` as an extension
 under development, in a scratch profile, and takes a window screenshot after each call. Measure 5 is
-`measure/kilo-sessions/run.sh WORKDIR`, which says in its header what the local server needs.
+`measure/kilo-sessions/run.sh WORKDIR` (the cloud rerun adds `CONFIG`, `CLOUD`, `MODEL` and `ANTHROPIC_API_KEY` in the environment), which says in its header what the local server needs.
 
 `STANDARD` is the standard's `checks` folder at the pinned release, extracted as `AGENTS.md` says. `PYTHON` must have
 the runner's libraries. `TOPIC` and `METHOD` may name the topic extension's `checks/local` folder and the method's

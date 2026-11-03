@@ -1,0 +1,15 @@
+{
+  "$schema": "https://app.kilo.ai/config.json",
+  "share": "disabled",
+  "autoupdate": false,
+  "enabled_providers": ["anthropic"],
+  "provider": {
+    "anthropic": {
+      "models": {
+        "claude-haiku-5-5": { "name": "claude-haiku-5-5" },
+        "claude-sonnet-5-5": { "name": "claude-sonnet-5-5" }
+      }
+    }
+  },
+  "model": "anthropic/claude-sonnet-5-5"
+}

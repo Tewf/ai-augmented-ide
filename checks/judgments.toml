@@ -225,12 +225,12 @@ answer = "It stays a folder: an editor loads an extension from a folder holding 
 check = "document-mode"
 path = "spike/RESULTS.md"
 question = "reads about equally as how-to and reference: one mode per document?"
-file = "c1ab6ca28320"
+file = "c2ca5c186b75"
 answer = "Reference: the page is read for the numbers in `The five measures` and what each is; `Run it` is one short command block, not a second mode."
 
 [[answer]]
 check = "logical-lines"
 path = "spike/RESULTS.md"
-question = "102 logical lines, past the trigger of 80. State this file's role in one sentence. If the sentence needs 'and', split the file; if not, it may stay."
-file = "c1ab6ca28320"
+question = "116 logical lines, past the trigger of 80. State this file's role in one sentence. If the sentence needs 'and', split the file; if not, it may stay."
+file = "c2ca5c186b75"
 answer = "The role is the numbers of the spike against their thresholds; it stays whole, its parts being `The five measures` and `What each number is`."
