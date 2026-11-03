@@ -7,6 +7,7 @@ decision in one sentence under its title, then its status, context, decision and
 
 | Record | Summary |
 |---|---|
+| [0009 Choices made while building the extension](0009-choices-made-while-building-the-extension.md) | Build the extension in `extension/` as the design and the spike set it out, with eight choices the design left open |
 | [0008 The spike passed three measures and two are open](0008-the-spike-passed-three-measures-and-two-are-open.md) | Keep the design as it is: the tree, the verdicts and the display passed their thresholds on both corpora, and the two measures that need the baseline and a model stay open |
 | [0007 A one-day spike before any build](0007-a-one-day-spike-before-any-build.md) | A throwaway spike of one day tests the reading and the hand-over on two corpora, against thresholds fixed in advance, before any extension is built |
 | [0006 The extension keeps no state and decides nothing](0006-the-extension-keeps-no-state-and-decides-nothing.md) | The extension keeps no state of its own, calls no model and decides nothing, and it runs the project's check command only when asked or on save |

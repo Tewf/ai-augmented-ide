@@ -10,15 +10,14 @@ bâtie sur une extension libre là où une fait déjà une partie du travail.
 
 Cette page en anglais : [README.md](README.md). Les deux versions suivent le même état.
 
-> **État (2026-11-03), version 0.1.0 :** la revue de l'état de l'art est écrite, la référence est nommée, et un document de conception
-> de l'extension est proposé, et un essai existe, dont trois des cinq mesures sont menées et réussies ; rien n'est livré, et rien ne le sera avant que la conception d'ai-augmented-project soit approuvée. Le nom est provisoire. Ce n'est ni une norme officielle, ni une étude relue par des pairs, ni un résultat nouveau.
+> **État (2026-11-03), 0.2.0 en préparation :** la revue de l'état de l'art est écrite, la référence est nommée, la conception de l'extension est proposée, l'essai a mené ses cinq mesures. L'extension est construite dans `extension/` et empaquetée en fichier. Rien n'est publié sur une place de marché, et rien ne le sera avant que la conception d'ai-augmented-project soit approuvée. Le nom est provisoire. Ce n'est ni une norme officielle, ni une étude relue par des pairs, ni un résultat nouveau.
 >
 > **Comment il est fait :** avec Claude, un assistant IA d'Anthropic, sous la direction du mainteneur, comme
 > reader-ergonomics. Les corrections sont bienvenues sous forme d'issues.
 
 ## L'adopter
 
-Aucune extension n'est livrée, il n'y a donc rien à installer. Ce qu'on peut prendre, c'est la manière dont ce dépôt
+L'extension s'installe depuis un fichier ([L'installer](#linstaller)). On peut aussi prendre la manière dont ce dépôt
 est construit : un document de conception avant le code, une fiche par choix, un essai dont les mesures sont fixées
 d'avance. Copiez depuis une version étiquetée ([tags](https://github.com/Tewf/ai-augmented-ide/tags)), pour qu'un
 changement ultérieur ici ne change jamais votre copie.
@@ -45,6 +44,24 @@ Un désaccord a trois destinations :
 - une issue sur [ce dépôt](https://github.com/Tewf/ai-augmented-ide/issues), quand ses preuves ou sa conception sont fausses.
 
 La section de la norme, [Take your own version](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/README.md#take-your-own-version), donne le reste.
+
+## L'installer
+
+L'extension n'est pas publiée. Construisez le fichier et installez-le :
+
+```sh
+cd extension
+npm ci
+npx vsce package          # écrit ai-augmented-0.2.0.vsix
+code --install-extension ai-augmented-0.2.0.vsix
+```
+
+- Elle s'active sur un dossier qui contient `checks/config.toml` ou `START.md`.
+- Les réglages (`aiAugmented.*`) nomment le fichier des verdicts, celui des questions, le fichier de départ, l'index de la mémoire et la commande de vérification.
+  Les topics viennent de `[topic] files` dans `checks/config.toml`.
+- **Publier** sur Open VSX et sur la place de marché est l'étape du mainteneur, avec ses jetons. Ce dépôt n'en détient aucun.
+- **Taille du modèle.** La note de remise demande à l'agent de lire d'abord le fichier de départ. Dans l'essai, un modèle local de 7 milliards de paramètres l'a fait dans 2 sessions sur 5 au mieux. Un modèle de 8 milliards ne l'a jamais fait. Deux modèles en nuage l'ont fait dans 5 sur 5 chacun ([mesure 5](spike/RESULTS.md)).
+  Cinq sessions par modèle, un seul jeu d'essai. Avec un petit modèle local, joignez vous-même le fichier de départ.
 
 ## Où il se place
 
@@ -154,15 +171,15 @@ Proposée le 2026-11-03 ([conception](design/extension.md)). Elle change avec la
 
 ## L'essai
 
-Fait le 2026-11-03 ([résultats](spike/RESULTS.md), [0008](decisions/0008-the-spike-passed-three-measures-and-two-are-open.md)). Un essai existe ; rien n'est livré.
+Fait le 2026-11-03 ([résultats](spike/RESULTS.md), [0008](decisions/0008-the-spike-passed-three-measures-and-two-are-open.md), que les résultats mettent à jour). L'extension en est tirée ([0009](decisions/0009-choices-made-while-building-the-extension.md)).
 
 | Mesure | Seuil | Résultat |
 |---|---|---|
 | Arbre contre la vérification des topics | paires égales | égales sur les deux corpus |
 | Verdicts contre diagnostics | égaux, sur la ligne | 14 sur 14 et 44 sur 44 |
 | Délai d'affichage | moins de 2 s | 3,1 ms au pire |
-| Les commandes de la référence prennent un argument | 5 sur 5 | non fait |
-| L'agent lit d'abord les originaux | 4 sur 5 | non fait |
+| Les commandes de la référence prennent un argument | 5 sur 5, ou la personne joint | non : la personne joint la note |
+| L'agent lit d'abord les originaux | 4 sur 5 | modèle local 0 sur 5 ; deux modèles en nuage 5 sur 5 chacun |
 
 ## Vérifier
 
@@ -182,6 +199,7 @@ construit aussi le site, [tewf.github.io/ai-augmented-ide](https://tewf.github.i
 |---|---|
 | [design](design/extension.md) | l'extension proposée : ce qu'elle lit, montre et remet, et l'essai qui la teste |
 | [evidence](evidence/) | la revue de l'état de l'art, 28 sources, et la bibliographie |
+| [extension](extension/README.md) | l'extension : ses lecteurs, ses vues, ses commandes et ses tests, empaquetée en fichier |
 | [spike](spike/RESULTS.md) | l'extension jetable de l'essai d'un jour, ses tests unitaires et ses cinq mesures |
 | [decisions](decisions/) | une fiche par choix qui façonne ce dépôt, chacune ouvrant sur la décision en une phrase |
 

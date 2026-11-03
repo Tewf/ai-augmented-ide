@@ -1,6 +1,6 @@
 # AI-augmented IDE
 
-> The software that implements ai-augmented-project inside the editor: a VS Code extension that shows the person the project as topics, the checkers' verdicts in place, and the questions that are theirs, and hands the model what the method says. The review of the state of the art names the baseline, Kilo Code; the design document decides a thin extension beside an agent; a spike of the design exists and nothing is shipped before the method's design is approved.
+> The software that implements ai-augmented-project inside the editor: a VS Code extension that shows the person the project as topics, the checkers' verdicts in place, and the questions that are theirs, and hands the model what the method says. The review of the state of the art names the baseline, Kilo Code; the design document decides a thin extension beside an agent; a spike tested it and the extension is built in extension/, packaged as a file and not published before the method's design is approved.
 
 Each page's markdown source is served at the same path with a .md extension. This index is written by hand; AGENTS.md says to keep it in step.
 
@@ -11,7 +11,8 @@ Each page's markdown source is served at the same path with a .md extension. Thi
 - [State of the art](https://tewf.github.io/ai-augmented-ide/evidence/state-of-the-art/README.md): what open editor extensions do of the method, what the studies say, the case against, the position
 - [Baseline](https://tewf.github.io/ai-augmented-ide/evidence/state-of-the-art/baseline.md): Kilo Code, and the gap to the method
 - [Design](https://tewf.github.io/ai-augmented-ide/design/extension.md): the proposed extension: three views read from files, a hand-over note, no state, and a one-day spike
-- [Spike results](https://tewf.github.io/ai-augmented-ide/spike/RESULTS.md): the one-day spike: three measures passed on two corpora, two open
+- [Extension](https://tewf.github.io/ai-augmented-ide/extension/README.md): the built extension: readers, three views, commands and tests
+- [Spike results](https://tewf.github.io/ai-augmented-ide/spike/RESULTS.md): the one-day spike: five measures run, three passed, one answered no, one passed on cloud models only
 - [Decisions](https://tewf.github.io/ai-augmented-ide/decisions/README.md): one record per choice that shapes the repository
 
 ## Contributing

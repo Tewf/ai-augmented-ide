@@ -10,15 +10,14 @@ an open extension where one already does part of the job.
 
 This page in French: [README.fr.md](README.fr.md).
 
-> **Status (2026-11-03), release 0.1.0:** the review of the state of the art is written, the baseline is named, and a design document
-> of the extension is proposed, and a spike exists, with three of its five measures run and passed; nothing is shipped, and nothing will be until the design of ai-augmented-project is approved. The name is provisional. It is not an official standard, not a peer-reviewed study and not a new result.
+> **Status (2026-11-03), 0.2.0 in preparation:** the review of the state of the art is written, the baseline is named, the design of the extension is proposed, the spike ran its five measures. The extension is built in `extension/` and packaged as a file. Nothing is published to a marketplace, and nothing will be until the design of ai-augmented-project is approved. The name is provisional. It is not an official standard, not a peer-reviewed study and not a new result.
 >
 > **How it is made:** with Claude, an AI assistant by Anthropic, under the maintainer's direction, the way
 > reader-ergonomics was made. Corrections are welcome as issues.
 
 ## Take it
 
-No extension is shipped, so there is nothing to install. What can be taken is the way this repository is built: a
+The extension can be installed from a file ([Install it](#install-it)). What can also be taken is the way this repository is built: a
 design document before the code, a record per choice, a spike with its measures fixed in advance. Copy from a tagged
 release ([tags](https://github.com/Tewf/ai-augmented-ide/tags)), so a later change here never changes your copy.
 
@@ -44,6 +43,25 @@ A disagreement has three places to go:
 - an issue on [this repository](https://github.com/Tewf/ai-augmented-ide/issues), when its evidence or its design is wrong.
 
 The standard's section, [Take your own version](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/README.md#take-your-own-version), gives the rest.
+
+## Install it
+
+The extension is not published. Build the file and install it:
+
+```sh
+cd extension
+npm ci
+npx vsce package          # writes ai-augmented-0.2.0.vsix
+code --install-extension ai-augmented-0.2.0.vsix
+```
+
+- It activates on a folder that holds `checks/config.toml` or `START.md`.
+- Settings (`aiAugmented.*`) name the verdicts file, the questions file, the start file, the memory index and the check command.
+  The topics are read from `[topic] files` in `checks/config.toml`.
+- **Publishing** to Open VSX and to the marketplace is the maintainer's step, with his tokens. This repository holds none.
+- **Model size.** The hand-over note asks the agent to read the start file first. In the spike, a local 7B model did so in 2 of 5
+  sessions at best and an 8B model in none; two cloud models did so in 5 of 5 each ([measure 5](spike/RESULTS.md)).
+  Five sessions per model, one fixture. With a small local model, attach the start file yourself.
 
 ## Where it sits
 
@@ -153,15 +171,15 @@ Proposed, 2026-11-03 ([design](design/extension.md)). It changes with the design
 
 ## The spike
 
-Run on 2026-11-03 ([results](spike/RESULTS.md), [0008](decisions/0008-the-spike-passed-three-measures-and-two-are-open.md)). A spike exists; nothing is shipped.
+Run on 2026-11-03 ([results](spike/RESULTS.md), [0008](decisions/0008-the-spike-passed-three-measures-and-two-are-open.md), which the results update). The extension is built from it ([0009](decisions/0009-choices-made-while-building-the-extension.md)).
 
 | Measure | Threshold | Result |
 |---|---|---|
 | Tree against the topic check | equal pairs | equal on both corpora |
 | Verdicts against diagnostics | equal, on the line | 14 of 14 and 44 of 44 |
 | Time to display | under 2 s | 3.1 ms at worst |
-| Baseline commands take an argument | 5 of 5 | not run |
-| Agent reads the originals first | 4 of 5 | not run |
+| Baseline commands take an argument | 5 of 5, or the person attaches | no: the person attaches the note |
+| Agent reads the originals first | 4 of 5 | local model 0 of 5; two cloud models 5 of 5 each |
 
 ## Check it
 
@@ -181,6 +199,7 @@ also renders the site, [tewf.github.io/ai-augmented-ide](https://tewf.github.io/
 |---|---|
 | [design](design/extension.md) | the proposed extension: what it reads, shows and hands over, and the spike that tests it |
 | [evidence](evidence/) | the review of the state of the art, 28 sources, and the bibliography |
+| [extension](extension/README.md) | the extension: its readers, views, commands and tests, packaged as a file |
 | [spike](spike/RESULTS.md) | the throwaway extension of the one-day spike, its unit tests and its five measures |
 | [decisions](decisions/) | one record per choice that shapes this repository, each opening with the decision in one sentence |
 

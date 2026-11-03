@@ -234,3 +234,59 @@ path = "spike/RESULTS.md"
 question = "116 logical lines, past the trigger of 80. State this file's role in one sentence. If the sentence needs 'and', split the file; if not, it may stay."
 file = "c2ca5c186b75"
 answer = "The role is the numbers of the spike against their thresholds; it stays whole, its parts being `The five measures` and `What each number is`."
+
+[[answer]]
+check = "logical-lines"
+path = "README.fr.md"
+question = "118 logical lines, past the trigger of 80. State this file's role in one sentence. If the sentence needs 'and', split the file; if not, it may stay."
+file = "cf034b03a197"
+answer = "Le rôle est la page d'accueil en français : ce qu'est le dépôt, comment l'installer et ce que la revue a trouvé. Elle reste entière ; `L'installer`, `Périmètre` et `Contenu` en sont les parties."
+
+[[answer]]
+check = "logical-lines"
+path = "README.md"
+question = "118 logical lines, past the trigger of 80. State this file's role in one sentence. If the sentence needs 'and', split the file; if not, it may stay."
+file = "1b4ea8c4a139"
+answer = "The role is the front page: what the repository is, how to install and take it, and what the review found. It stays whole; `Install it`, `Scope` and `Contents` are its parts."
+
+[[answer]]
+check = "logical-lines"
+path = "design/extension.md"
+question = "168 logical lines, past the trigger of 80. State this file's role in one sentence. If the sentence needs 'and', split the file; if not, it may stay."
+file = "66db5bcf8bd2"
+answer = "The role is the proposed design of the extension and the spike that tests it. It stays whole; `Design` and `Goals and non-goals` are its parts, and the shape asks for them in one file."
+
+[[answer]]
+check = "co-change"
+path = ".github/workflows/checks.yml"
+question = "changed together with CHANGELOG.md in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "4821c7c03a99"
+answer = "The workflow stays in `.github/workflows`, where GitHub reads it. The changelog records each change to what CI runs, such as the step `Package the extension`, and the front page links the workflow."
+
+[[answer]]
+check = "co-change"
+path = ".github/workflows/checks.yml"
+question = "changed together with README.fr.md in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "4821c7c03a99"
+answer = "The workflow stays in its required folder. The French front page links it and changes with the English one by design; the step `Package the extension` is one such change."
+
+[[answer]]
+check = "co-change"
+path = ".github/workflows/checks.yml"
+question = "changed together with README.md in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "4821c7c03a99"
+answer = "The workflow stays in its required folder. The front page links it, and a new CI step such as `xvfb-run` for the editor tests is a change to what the page says CI runs."
+
+[[answer]]
+check = "paraphrase"
+path = "README.fr.md"
+question = "says nearly what README.md (line 33) says, similarity 0.95: one fact in two places?"
+file = "cf034b03a197"
+answer = "Not duplication: the French page is the same page in French, kept in step on purpose (`Cette page en anglais`)."
+
+[[answer]]
+check = "document-mode"
+path = "README.fr.md"
+question = "reads about equally as reference and how-to: one mode per document?"
+file = "cf034b03a197"
+answer = "One mode: understanding why. The page states the scope under `Périmètre` and the baseline under `La référence`; `L'installer` gives the commands, not a second mode."
