@@ -11,7 +11,7 @@ bâtie sur une extension libre là où une fait déjà une partie du travail.
 Cette page en anglais : [README.md](README.md). Les deux versions suivent le même état.
 
 > **État (2026-11-03) :** la revue de l'état de l'art est écrite, la référence est nommée, et un document de conception
-> de l'extension est proposé ; rien n'est construit, et rien ne le sera avant que la conception d'ai-augmented-project soit approuvée. Le nom est provisoire. Ce n'est ni une norme officielle, ni une étude relue par des pairs, ni un résultat nouveau.
+> de l'extension est proposé, et un essai existe ; rien n'est livré, et rien ne le sera avant que la conception d'ai-augmented-project soit approuvée. Le nom est provisoire. Ce n'est ni une norme officielle, ni une étude relue par des pairs, ni un résultat nouveau.
 >
 > **Comment il est fait :** avec Claude, un assistant IA d'Anthropic, sous la direction du mainteneur, comme
 > reader-ergonomics. Les corrections sont bienvenues sous forme d'issues.
@@ -122,6 +122,18 @@ Proposée le 2026-11-03 ([conception](design/extension.md)). Elle change avec la
 - Pas d'état, pas de modèle, pas de décision ([0006](decisions/0006-the-extension-keeps-no-state-and-decides-nothing.md)).
 - Un essai d'un jour d'abord ([0007](decisions/0007-a-one-day-spike-before-any-build.md)) : cinq mesures, seuils fixés d'avance.
 
+## L'essai
+
+Fait le 2026-11-03 ([résultats](spike/RESULTS.md), [0008](decisions/0008-the-spike-passed-three-measures-and-two-are-open.md)). Un essai existe ; rien n'est livré.
+
+| Mesure | Seuil | Résultat |
+|---|---|---|
+| Arbre contre la vérification des topics | paires égales | égales sur les deux corpus |
+| Verdicts contre diagnostics | égaux, sur la ligne | 14 sur 14 et 44 sur 44 |
+| Délai d'affichage | moins de 2 s | 3,1 ms au pire |
+| Les commandes de la référence prennent un argument | 5 sur 5 | non fait |
+| L'agent lit d'abord les originaux | 4 sur 5 | non fait |
+
 ## Vérifier
 
 ```sh
@@ -140,6 +152,7 @@ construit aussi le site, [tewf.github.io/ai-augmented-ide](https://tewf.github.i
 |---|---|
 | [design](design/extension.md) | l'extension proposée : ce qu'elle lit, montre et remet, et l'essai qui la teste |
 | [evidence](evidence/) | la revue de l'état de l'art, 28 sources, et la bibliographie |
+| [spike](spike/RESULTS.md) | l'extension jetable de l'essai d'un jour, ses tests unitaires et ses cinq mesures |
 | [decisions](decisions/) | une fiche par choix qui façonne ce dépôt, chacune ouvrant sur la décision en une phrase |
 
 ## Licence

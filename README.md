@@ -11,7 +11,7 @@ an open extension where one already does part of the job.
 This page in French: [README.fr.md](README.fr.md).
 
 > **Status (2026-11-03):** the review of the state of the art is written, the baseline is named, and a design document
-> of the extension is proposed; nothing is built, and nothing will be until the design of ai-augmented-project is approved. The name is provisional. It is not an official standard, not a peer-reviewed study and not a new result.
+> of the extension is proposed, and a spike exists; nothing is shipped, and nothing will be until the design of ai-augmented-project is approved. The name is provisional. It is not an official standard, not a peer-reviewed study and not a new result.
 >
 > **How it is made:** with Claude, an AI assistant by Anthropic, under the maintainer's direction, the way
 > reader-ergonomics was made. Corrections are welcome as issues.
@@ -122,6 +122,18 @@ Proposed, 2026-11-03 ([design](design/extension.md)). It changes with the design
 - No state, no model, no decision ([0006](decisions/0006-the-extension-keeps-no-state-and-decides-nothing.md)).
 - A one-day spike first ([0007](decisions/0007-a-one-day-spike-before-any-build.md)): five measures, thresholds fixed in advance.
 
+## The spike
+
+Run on 2026-11-03 ([results](spike/RESULTS.md), [0008](decisions/0008-the-spike-passed-three-measures-and-two-are-open.md)). A spike exists; nothing is shipped.
+
+| Measure | Threshold | Result |
+|---|---|---|
+| Tree against the topic check | equal pairs | equal on both corpora |
+| Verdicts against diagnostics | equal, on the line | 14 of 14 and 44 of 44 |
+| Time to display | under 2 s | 3.1 ms at worst |
+| Baseline commands take an argument | 5 of 5 | not run |
+| Agent reads the originals first | 4 of 5 | not run |
+
 ## Check it
 
 ```sh
@@ -140,6 +152,7 @@ also renders the site, [tewf.github.io/ai-augmented-ide](https://tewf.github.io/
 |---|---|
 | [design](design/extension.md) | the proposed extension: what it reads, shows and hands over, and the spike that tests it |
 | [evidence](evidence/) | the review of the state of the art, 28 sources, and the bibliography |
+| [spike](spike/RESULTS.md) | the throwaway extension of the one-day spike, its unit tests and its five measures |
 | [decisions](decisions/) | one record per choice that shapes this repository, each opening with the decision in one sentence |
 
 ## Licence
