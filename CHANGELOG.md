@@ -3,6 +3,12 @@
 Every release of this repository, and the releases it pins, newest first, in the form of [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 A pin move is recorded here, not in decisions/.
 
+## [Unreleased]
+
+### Changed
+
+- Pinned reader-ergonomics v1.20.0 (`4f99372`), from v1.19.2 (`b9732b9`): the runner's verdicts file (`--out`), and hand-written llms.txt lines kept through a rebuild
+
 ## [0.1.0] - 2026-11-03
 
 ### Added

@@ -3,7 +3,7 @@
 **Decision:** The editor extension that implements the AI-augmented project method is one problem, so it gets one public repository, set up with its
 scope and nothing more.
 
-**Status:** accepted, 2026-11-02. **Shape:** [decision record](https://github.com/Tewf/reader-ergonomics/blob/b9732b9814c71768f722691f3c5049ec2b8ed378/shapes/decision-record.md).
+**Status:** accepted, 2026-11-02. **Shape:** [decision record](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/shapes/decision-record.md).
 
 ## Context
 
@@ -19,7 +19,7 @@ scope and nothing more.
 - One public repository for this problem, under the family's provisional prefix, renamed when the review names it.
 - At its start it holds its scope, the questions its review must answer, the checks of reader-ergonomics in CI, a
   site, and this record. Nothing of the work itself.
-- It pins reader-ergonomics v1.19.2 by commit, and links down only.
+- It pins reader-ergonomics v1.20.0 by commit, and links down only.
 
 ## Consequences
 

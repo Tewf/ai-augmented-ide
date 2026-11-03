@@ -1,6 +1,6 @@
 # Decisions
 
-One record per choice that shapes this repository. Each follows the [decision record](https://github.com/Tewf/reader-ergonomics/blob/b9732b9814c71768f722691f3c5049ec2b8ed378/shapes/decision-record.md) of reader-ergonomics: the
+One record per choice that shapes this repository. Each follows the [decision record](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/shapes/decision-record.md) of reader-ergonomics: the
 decision in one sentence under its title, then its status, context, decision and consequences.
 
 ## Contents

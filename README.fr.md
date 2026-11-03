@@ -34,7 +34,7 @@ changement ultérieur ici ne change jamais votre copie.
 
    ```sh
    git clone https://github.com/Tewf/reader-ergonomics ../reader-ergonomics
-   git -C ../reader-ergonomics checkout b9732b9814c71768f722691f3c5049ec2b8ed378   # version 1.19.2
+   git -C ../reader-ergonomics checkout 4f99372093729dacf982e9174e94f6b8793c513d   # version 1.20.0
    python3 ../reader-ergonomics/checks/run.py chemin/vers/votre/dépôt
    ```
 
@@ -44,7 +44,7 @@ Un désaccord a trois destinations :
 - une extension, s'il porte sur un genre ;
 - une issue sur [ce dépôt](https://github.com/Tewf/ai-augmented-ide/issues), quand ses preuves ou sa conception sont fausses.
 
-La section de la norme, [Take your own version](https://github.com/Tewf/reader-ergonomics/blob/b9732b9814c71768f722691f3c5049ec2b8ed378/README.md#take-your-own-version), donne le reste.
+La section de la norme, [Take your own version](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/README.md#take-your-own-version), donne le reste.
 
 ## Où il se place
 
@@ -77,7 +77,7 @@ digraph where_it_sits {
 
 - **Il met en œuvre [ai-augmented-project](https://github.com/Tewf/ai-augmented-project)** et rien de son cru : un choix
   sur la méthode se fait là, avec une fiche, puis se met en œuvre ici.
-- **Il obéit à [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/b9732b9814c71768f722691f3c5049ec2b8ed378/standard.md)** (v1.19.2) pour ses documents et exécute ses vérifications en CI ;
+- **Il obéit à [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/standard.md)** (v1.20.0) pour ses documents et exécute ses vérifications en CI ;
   le code suivra [reader-ergonomics-software-design](https://github.com/Tewf/reader-ergonomics-software-design) : un
   document de conception avant de construire, une fiche par choix.
 - **Il ne pointe que vers le bas.** La carte de la famille est [ai-augmented](https://github.com/Tewf/ai-augmented).

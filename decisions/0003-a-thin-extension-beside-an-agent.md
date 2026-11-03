@@ -2,7 +2,7 @@
 
 **Decision:** The editor extension contributes views and a hand-over beside an existing agent, drives the baseline only through an optional adapter, and works with any agent that reads files.
 
-**Status:** proposed, 2026-11-03. **Shape:** [decision record](https://github.com/Tewf/reader-ergonomics/blob/b9732b9814c71768f722691f3c5049ec2b8ed378/shapes/decision-record.md).
+**Status:** proposed, 2026-11-03. **Shape:** [decision record](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/shapes/decision-record.md).
 
 ## Context
 

@@ -33,7 +33,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: Tewf/reader-ergonomics
-          ref: b9732b9814c71768f722691f3c5049ec2b8ed378   # v1.19.2 (reader-ergonomics extending.md, Versions)
+          ref: 4f99372093729dacf982e9174e94f6b8793c513d   # v1.20.0 (reader-ergonomics extending.md, Versions)
           path: standard
       - uses: actions/setup-python@v5
         with:
@@ -79,7 +79,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: Tewf/reader-ergonomics
-          ref: b9732b9814c71768f722691f3c5049ec2b8ed378   # v1.19.2 (reader-ergonomics extending.md, Versions)
+          ref: 4f99372093729dacf982e9174e94f6b8793c513d   # v1.20.0 (reader-ergonomics extending.md, Versions)
           path: standard
       - uses: actions/setup-python@v5
         with:

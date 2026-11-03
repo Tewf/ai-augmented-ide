@@ -2,7 +2,7 @@
 
 **Decision:** A throwaway spike of one day tests the reading and the hand-over on two corpora, against thresholds fixed in advance, before any extension is built.
 
-**Status:** proposed, 2026-11-03. **Shape:** [decision record](https://github.com/Tewf/reader-ergonomics/blob/b9732b9814c71768f722691f3c5049ec2b8ed378/shapes/decision-record.md).
+**Status:** proposed, 2026-11-03. **Shape:** [decision record](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/shapes/decision-record.md).
 
 ## Context
 
