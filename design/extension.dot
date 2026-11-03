@@ -12,7 +12,7 @@ digraph extension {
   W1 [label=<<b>tree of topics</b>>, fillcolor="#E6F2EA", color="#2E7D4F"];
   W2 [label=<<b>verdicts in place</b><br/><font point-size="11" color="#55575F">diagnostics and badges</font>>, fillcolor="#E6F2EA", color="#2E7D4F"];
   W3 [label=<<b>questions</b><br/><font point-size="11" color="#55575F">options, default first</font>>, fillcolor="#E6F2EA", color="#2E7D4F"];
-  B [label=<<b>brief</b><br/><font point-size="11" color="#55575F">paths and lines, derived, disposable</font>>, fillcolor="#FFFFFF", color="#3D434B", style="rounded,filled,dashed"];
+  B [label=<<b>hand-over note</b><br/><font point-size="11" color="#55575F">paths and lines, derived, disposable</font>>, fillcolor="#FFFFFF", color="#3D434B", style="rounded,filled,dashed"];
   A [label=<<b>agent</b><br/><font point-size="11" color="#55575F">Kilo Code, or any agent that reads files</font>>, fillcolor="#FBEDE4", color="#B4541A"];
   C [label=<<b>checks</b><br/><font point-size="11" color="#55575F">the machine: pass or fail</font>>, fillcolor="#E8EEF8", color="#2F5DA8"];
   T -> X [label=" reads"];

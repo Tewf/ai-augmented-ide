@@ -118,7 +118,7 @@ Proposed, 2026-11-03 ([design](design/extension.md)). It changes with the design
 
 - A thin extension beside an agent ([0003](decisions/0003-a-thin-extension-beside-an-agent.md)): views and a hand-over, driving the baseline only through an optional adapter.
 - Three views read from files ([0004](decisions/0004-three-views-read-from-files.md)): the tree of topics, each verdict where it stands, the person's questions.
-- A pointer brief ([0005](decisions/0005-a-pointer-brief-hands-over-the-originals.md)): the start file and the memory index are named, never copied.
+- A hand-over note ([0005](decisions/0005-a-hand-over-note-names-the-originals.md)): the start file and the memory index are named, never copied.
 - No state, no model, no decision ([0006](decisions/0006-the-extension-keeps-no-state-and-decides-nothing.md)).
 - A one-day spike first ([0007](decisions/0007-a-one-day-spike-before-any-build.md)): five measures, thresholds fixed in advance.
 

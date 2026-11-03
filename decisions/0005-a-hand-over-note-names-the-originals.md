@@ -1,6 +1,6 @@
-# 0005: A pointer brief hands over the originals
+# 0005: A hand-over note names the originals
 
-**Decision:** The extension hands the model the start file and the memory index unchanged by writing a small derived brief that names them, and never copies them.
+**Decision:** The extension hands the model the start file and the memory index unchanged by writing a small derived hand-over note that names them, and never copies them.
 
 **Status:** proposed, 2026-11-03. **Shape:** [decision record](https://github.com/Tewf/reader-ergonomics/blob/b9732b9814c71768f722691f3c5049ec2b8ed378/shapes/decision-record.md).
 
@@ -12,15 +12,15 @@
 
 ## Decision
 
-- The brief holds the two paths, the lines of any failed check as the verdicts file has them, and the last lines of the decision log.
+- The note holds the two paths, the lines of any failed check as the verdicts file has them, and the last lines of the decision log.
 - The adapter attaches it where the agent allows; otherwise the person does.
 - Rejected: a copy in the agent's rules folder; the text typed as a first message; a tool the model calls; reliance on loading by name.
 - Written in [the design](../design/extension.md), decision 3.
 
 ## Consequences
 
-- The originals stay the only copies, and the brief can be deleted at any time.
-- **Bad:** the agent must obey "read these first", which nothing here enforces, and the method has to adopt or replace this brief.
+- The originals stay the only copies, and the note can be deleted at any time.
+- **Bad:** the agent must obey "read these first", which nothing here enforces, and the method has to adopt or replace this note.
 
 ## See also
 

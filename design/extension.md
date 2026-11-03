@@ -22,7 +22,8 @@ Terms, defined here before use:
 - A **verdict** is one line of a check's output: its kind, its name, a place and a message.
 - A **judgment entry** is a question that a check could not decide and left to the person.
 - The **start file** and the **memory index** are the two files the method hands a session first.
-- The **brief** is the small file this design writes to point the agent at those two files.
+- The **hand-over note** is the small file this design writes to point the agent at those two files. It is not the
+  method's **brief**, the task file with its four headings; the note may carry that brief's path.
 - The **baseline** is [Kilo Code](../evidence/state-of-the-art/baseline.md), MIT, version 7.8.25 of its extension.
 
 ## Motivation
@@ -51,7 +52,7 @@ The review found that no open extension shows a tree of topics or a verdict besi
 
 ## Design
 
-![The extension reads topic files, a verdicts file and question files, shows three views, and writes one brief that points the agent at the start file and the memory index. The agent is Kilo Code or any agent that reads files.](extension.svg)
+![The extension reads topic files, a verdicts file and question files, shows three views, and writes one hand-over note that points the agent at the start file and the memory index. The agent is Kilo Code or any agent that reads files.](extension.svg)
 
 <details>
 <summary>Graphviz source</summary>
@@ -71,7 +72,7 @@ digraph extension {
   W1 [label=<<b>tree of topics</b>>, fillcolor="#E6F2EA", color="#2E7D4F"];
   W2 [label=<<b>verdicts in place</b><br/><font point-size="11" color="#55575F">diagnostics and badges</font>>, fillcolor="#E6F2EA", color="#2E7D4F"];
   W3 [label=<<b>questions</b><br/><font point-size="11" color="#55575F">options, default first</font>>, fillcolor="#E6F2EA", color="#2E7D4F"];
-  B [label=<<b>brief</b><br/><font point-size="11" color="#55575F">paths and lines, derived, disposable</font>>, fillcolor="#FFFFFF", color="#3D434B", style="rounded,filled,dashed"];
+  B [label=<<b>hand-over note</b><br/><font point-size="11" color="#55575F">paths and lines, derived, disposable</font>>, fillcolor="#FFFFFF", color="#3D434B", style="rounded,filled,dashed"];
   A [label=<<b>agent</b><br/><font point-size="11" color="#55575F">Kilo Code, or any agent that reads files</font>>, fillcolor="#FBEDE4", color="#B4541A"];
   C [label=<<b>checks</b><br/><font point-size="11" color="#55575F">the machine: pass or fail</font>>, fillcolor="#E8EEF8", color="#2F5DA8"];
   T -> X [label=" reads"];
@@ -98,7 +99,7 @@ never inside one.
 
 - It uses the editor's tree view, its diagnostics list and its file decorations. These are interfaces any extension
   may use (VS Code 2026), so no agent extension needs to change.
-- The agent is replaceable. The core needs no command of the agent: it reads files and writes the brief.
+- The agent is replaceable. The core needs no command of the agent: it reads files and writes the note.
 - An **adapter** is an optional module that drives one agent's commands. The first is for the baseline.
 - The baseline's manifest contributes these commands: New Task, Add to Context, Focus Chat Input, Reload Config and
   Skills, and Show Project Memory (Kilo 2026, read in the manifest of version 7.8.25). Whether any takes an argument
@@ -151,18 +152,19 @@ Each view reads files. None of them stores what it read.
 
 ### 3. What it hands over, and how
 
-The method hands a session the start file and the memory index, and nothing else. It does not define a brief
-([dependencies](#what-this-design-depends-on)). This design defines the smallest one.
+The method hands a session the start file and the memory index, and nothing else, and defines the brief of a task
+(`brief.md`: Task, Decided, To find, Checks). This design adds only the hand-over note that names those files
+([dependencies](#what-this-design-depends-on)).
 
-- The extension writes the brief at the start of a session, in a folder the project's ignore file excludes.
-- The brief holds three things.
+- The extension writes the note at the start of a session, in a folder the project's ignore file excludes.
+- The note holds three things.
   The paths of the start file and the memory index, with the words "read these first, in full".
   The lines of any failed check, exactly as the verdicts file has them.
   The last lines of the decision log.
 - The start file and the memory index are **never copied or reworded**. The agent reads the originals. That is what unchanged means here.
-- The adapter opens a new task, and attaches the brief where the agent allows it. Where it does not, the extension
-  opens the brief and the person attaches it.
-- The brief is derived and disposable. The extension never reads it back, and deleting it loses nothing.
+- The adapter opens a new task, and attaches the note where the agent allows it. Where it does not, the extension
+  opens the note and the person attaches it.
+- The note is derived and disposable. The extension never reads it back, and deleting it loses nothing.
 
 | Option | Consequences | Why it lost |
 |---|---|---|
@@ -170,7 +172,7 @@ The method hands a session the start file and the memory index, and nothing else
 | Type the start file's text as the first chat message | no file to write | the text is not on disk, so the audit and the log cannot see it; the command's argument is untested |
 | Serve the files through a tool the model calls | the model asks only for what it needs | the model chooses what it is shown, which the method's decision 2 rejects |
 | Rely on the agent loading the start file by name | nothing to build | true only for agents that load that name; the baseline's rule files were not read |
-| A pointer brief (chosen) | the originals stay the only copies | one more file, and the agent must obey "read these first" |
+| A hand-over note (chosen) | the originals stay the only copies | one more file, and the agent must obey "read these first" |
 
 ### 4. What it never does
 
@@ -234,7 +236,7 @@ The method's design is not approved. Each row names what this document borrows a
   measure is the test that finds a drift.
 - Risks: the baseline can be archived, as two other extensions were in 2026. The adapter is the only part that
   breaks, and the core keeps working.
-- Risks: a person who does not attach the brief gets a session without the start file. The core shows the brief's
+- Risks: a person who does not attach the note gets a session without the start file. The core shows the brief's
   state, and the method's staleness audit does not cover it.
 - Compatibility: nothing in the project changes. The extension adds one ignored folder and one settings block.
 - Security: the brief, the verdicts and the answers are text a model reads, so text that came from outside is data and is

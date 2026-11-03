@@ -118,7 +118,7 @@ Proposée le 2026-11-03 ([conception](design/extension.md)). Elle change avec la
 
 - Une extension mince à côté d'un agent ([0003](decisions/0003-a-thin-extension-beside-an-agent.md)) : des vues et une remise, qui ne pilote la référence que par un adaptateur facultatif.
 - Trois vues lues dans des fichiers ([0004](decisions/0004-three-views-read-from-files.md)) : l'arbre de topics, chaque verdict là où il se tient, les questions de la personne.
-- Un brief par renvoi ([0005](decisions/0005-a-pointer-brief-hands-over-the-originals.md)) : le fichier de départ et l'index de la mémoire sont nommés, jamais copiés.
+- Un brief par renvoi ([0005](decisions/0005-a-hand-over-note-names-the-originals.md)) : le fichier de départ et l'index de la mémoire sont nommés, jamais copiés.
 - Pas d'état, pas de modèle, pas de décision ([0006](decisions/0006-the-extension-keeps-no-state-and-decides-nothing.md)).
 - Un essai d'un jour d'abord ([0007](decisions/0007-a-one-day-spike-before-any-build.md)) : cinq mesures, seuils fixés d'avance.
 

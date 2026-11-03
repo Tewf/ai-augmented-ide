@@ -10,7 +10,7 @@ Each page's markdown source is served at the same path with a .md extension. Thi
 - [Evidence](https://tewf.github.io/ai-augmented-ide/evidence/README.md): the review of the state of the art and the bibliography
 - [State of the art](https://tewf.github.io/ai-augmented-ide/evidence/state-of-the-art/README.md): what open editor extensions do of the method, what the studies say, the case against, the position
 - [Baseline](https://tewf.github.io/ai-augmented-ide/evidence/state-of-the-art/baseline.md): Kilo Code, and the gap to the method
-- [Design](https://tewf.github.io/ai-augmented-ide/design/extension.md): the proposed extension: three views read from files, a pointer brief, no state, and a one-day spike
+- [Design](https://tewf.github.io/ai-augmented-ide/design/extension.md): the proposed extension: three views read from files, a hand-over note, no state, and a one-day spike
 - [Decisions](https://tewf.github.io/ai-augmented-ide/decisions/README.md): one record per choice that shapes the repository
 
 ## Contributing
