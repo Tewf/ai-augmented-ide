@@ -1,6 +1,6 @@
 # AI-augmented IDE
 
-> The software that implements ai-augmented-project inside the editor: a VS Code extension that shows the person the project as topics, the checkers' verdicts in place, and the questions that are theirs, and hands the model what the method says. The review of the state of the art names the baseline, Kilo Code; nothing is built before the method's design is approved.
+> The software that implements ai-augmented-project inside the editor: a VS Code extension that shows the person the project as topics, the checkers' verdicts in place, and the questions that are theirs, and hands the model what the method says. The review of the state of the art names the baseline, Kilo Code; the design document decides a thin extension beside an agent; nothing is built before the method's design is approved.
 
 Each page's markdown source is served at the same path with a .md extension. This index is written by hand; AGENTS.md says to keep it in step.
 
@@ -10,6 +10,7 @@ Each page's markdown source is served at the same path with a .md extension. Thi
 - [Evidence](https://tewf.github.io/ai-augmented-ide/evidence/README.md): the review of the state of the art and the bibliography
 - [State of the art](https://tewf.github.io/ai-augmented-ide/evidence/state-of-the-art/README.md): what open editor extensions do of the method, what the studies say, the case against, the position
 - [Baseline](https://tewf.github.io/ai-augmented-ide/evidence/state-of-the-art/baseline.md): Kilo Code, and the gap to the method
+- [Design](https://tewf.github.io/ai-augmented-ide/design/extension.md): the proposed extension: three views read from files, a pointer brief, no state, and a one-day spike
 - [Decisions](https://tewf.github.io/ai-augmented-ide/decisions/README.md): one record per choice that shapes the repository
 
 ## Contributing

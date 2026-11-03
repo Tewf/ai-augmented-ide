@@ -10,8 +10,8 @@ an open extension where one already does part of the job.
 
 This page in French: [README.fr.md](README.fr.md).
 
-> **Status (2026-11-02):** the review of the state of the art is written and the baseline is named; nothing is built, and
-> nothing will be until the design of ai-augmented-project is approved. The name is provisional. It is not an official standard, not a peer-reviewed study and not a new result.
+> **Status (2026-11-03):** the review of the state of the art is written, the baseline is named, and a design document
+> of the extension is proposed; nothing is built, and nothing will be until the design of ai-augmented-project is approved. The name is provisional. It is not an official standard, not a peer-reviewed study and not a new result.
 >
 > **How it is made:** with Claude, an AI assistant by Anthropic, under the maintainer's direction, the way
 > reader-ergonomics was made. Corrections are welcome as issues.
@@ -112,6 +112,16 @@ The field calls the thing an AI IDE or an IDE coding agent. The name here matche
 | Memory the person edits | files on disk | editing not tested |
 | Brief passed unchanged | not read | to read |
 
+## The design
+
+Proposed, 2026-11-03 ([design](design/extension.md)). It changes with the design of the method, which is not yet approved.
+
+- A thin extension beside an agent ([0003](decisions/0003-a-thin-extension-beside-an-agent.md)): views and a hand-over, driving the baseline only through an optional adapter.
+- Three views read from files ([0004](decisions/0004-three-views-read-from-files.md)): the tree of topics, each verdict where it stands, the person's questions.
+- A pointer brief ([0005](decisions/0005-a-pointer-brief-hands-over-the-originals.md)): the start file and the memory index are named, never copied.
+- No state, no model, no decision ([0006](decisions/0006-the-extension-keeps-no-state-and-decides-nothing.md)).
+- A one-day spike first ([0007](decisions/0007-a-one-day-spike-before-any-build.md)): five measures, thresholds fixed in advance.
+
 ## Check it
 
 ```sh
@@ -128,6 +138,7 @@ also renders the site, [tewf.github.io/ai-augmented-ide](https://tewf.github.io/
 
 | Part | Summary |
 |---|---|
+| [design](design/extension.md) | the proposed extension: what it reads, shows and hands over, and the spike that tests it |
 | [evidence](evidence/) | the review of the state of the art, 28 sources, and the bibliography |
 | [decisions](decisions/) | one record per choice that shapes this repository, each opening with the decision in one sentence |
 

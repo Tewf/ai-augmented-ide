@@ -10,8 +10,8 @@ bâtie sur une extension libre là où une fait déjà une partie du travail.
 
 Cette page en anglais : [README.md](README.md). Les deux versions suivent le même état.
 
-> **État (2026-11-02) :** la revue de l'état de l'art est écrite et la référence est nommée ; rien n'est construit, et
-> rien ne le sera avant que la conception d'ai-augmented-project soit approuvée. Le nom est provisoire. Ce n'est ni une norme officielle, ni une étude relue par des pairs, ni un résultat nouveau.
+> **État (2026-11-03) :** la revue de l'état de l'art est écrite, la référence est nommée, et un document de conception
+> de l'extension est proposé ; rien n'est construit, et rien ne le sera avant que la conception d'ai-augmented-project soit approuvée. Le nom est provisoire. Ce n'est ni une norme officielle, ni une étude relue par des pairs, ni un résultat nouveau.
 >
 > **Comment il est fait :** avec Claude, un assistant IA d'Anthropic, sous la direction du mainteneur, comme
 > reader-ergonomics. Les corrections sont bienvenues sous forme d'issues.
@@ -112,6 +112,16 @@ Le domaine appelle cela un AI IDE ou un IDE coding agent. Le nom d'ici s'en appr
 | Mémoire que la personne édite | des fichiers sur disque | édition non testée |
 | Brief transmis tel quel | non lu | à lire |
 
+## La conception
+
+Proposée le 2026-11-03 ([conception](design/extension.md)). Elle change avec la conception de la méthode, qui n'est pas encore approuvée.
+
+- Une extension mince à côté d'un agent ([0003](decisions/0003-a-thin-extension-beside-an-agent.md)) : des vues et une remise, qui ne pilote la référence que par un adaptateur facultatif.
+- Trois vues lues dans des fichiers ([0004](decisions/0004-three-views-read-from-files.md)) : l'arbre de topics, chaque verdict là où il se tient, les questions de la personne.
+- Un brief par renvoi ([0005](decisions/0005-a-pointer-brief-hands-over-the-originals.md)) : le fichier de départ et l'index de la mémoire sont nommés, jamais copiés.
+- Pas d'état, pas de modèle, pas de décision ([0006](decisions/0006-the-extension-keeps-no-state-and-decides-nothing.md)).
+- Un essai d'un jour d'abord ([0007](decisions/0007-a-one-day-spike-before-any-build.md)) : cinq mesures, seuils fixés d'avance.
+
 ## Vérifier
 
 ```sh
@@ -128,6 +138,7 @@ construit aussi le site, [tewf.github.io/ai-augmented-ide](https://tewf.github.i
 
 | Partie | Résumé |
 |---|---|
+| [design](design/extension.md) | l'extension proposée : ce qu'elle lit, montre et remet, et l'essai qui la teste |
 | [evidence](evidence/) | la revue de l'état de l'art, 28 sources, et la bibliographie |
 | [decisions](decisions/) | une fiche par choix qui façonne ce dépôt, chacune ouvrant sur la décision en une phrase |
 
