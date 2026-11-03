@@ -1,0 +1,104 @@
+{
+  "name": "ai-ide-spike",
+  "displayName": "AI-augmented IDE spike",
+  "description": "Throwaway spike: three views read from files and a hand-over note. Nothing shipped.",
+  "version": "0.0.1",
+  "license": "Apache-2.0",
+  "private": true,
+  "publisher": "spike",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "main": "./out/src/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "scripts": {
+    "compile": "tsc -p .",
+    "test": "npm run compile && node --test \"out/test/*.test.js\"",
+    "measure": "npm run compile && node out/measure/measure.js"
+  },
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "aiIde",
+          "title": "Project",
+          "icon": "$(book)"
+        }
+      ]
+    },
+    "views": {
+      "aiIde": [
+        {
+          "id": "aiIde.topics",
+          "name": "Topics"
+        },
+        {
+          "id": "aiIde.questions",
+          "name": "Questions"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "aiIde.refresh",
+        "title": "AI IDE: Refresh the views"
+      },
+      {
+        "command": "aiIde.handover",
+        "title": "AI IDE: Write the hand-over note"
+      }
+    ],
+    "configuration": {
+      "title": "AI IDE spike",
+      "properties": {
+        "aiIde.topicFiles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "README.md",
+            "evidence/",
+            "decisions/",
+            "design/"
+          ]
+        },
+        "aiIde.rootTopic": {
+          "type": "string",
+          "default": "README.md"
+        },
+        "aiIde.verdictsFile": {
+          "type": "string",
+          "default": "checks/out/verdicts.txt"
+        },
+        "aiIde.judgmentsFile": {
+          "type": "string",
+          "default": "checks/out/judgments-to-answer.toml"
+        },
+        "aiIde.startFile": {
+          "type": "string",
+          "default": "START.md"
+        },
+        "aiIde.memoryIndex": {
+          "type": "string",
+          "default": "memory/INDEX.md"
+        },
+        "aiIde.decisionLog": {
+          "type": "string",
+          "default": "decisions.log"
+        },
+        "aiIde.noteFolder": {
+          "type": "string",
+          "default": ".handover"
+        }
+      }
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "@types/vscode": "^1.90.0",
+    "typescript": "^7.0.2"
+  }
+}

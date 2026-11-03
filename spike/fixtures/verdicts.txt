@@ -1,0 +1,8 @@
+error    topic                decisions/0001-a.md:12  not listed by its containing topic decisions/README.md: a reader cannot reach it from the root
+warning  topic                evidence/x/README.md:1  a summary of 80 words, past 60: it no longer stands for the topic when folded
+error    links                README.md  a link does not resolve: missing.md
+error    links                gone/file.md:7  a link does not resolve: other.md
+judgment logical-lines        design/extension.md:1  168 logical lines, past the trigger of 80.
+notice   tier 'syntax' skipped: its library is not installed (see checks/README.md)
+judgment: 10 question(s), 6 answered in checks/judgments.toml, 4 written to checks/out/needs-judgment.md
+1 error(s), 1 warning(s); tiers run: meaning, program

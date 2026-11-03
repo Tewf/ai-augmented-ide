@@ -1,0 +1,13 @@
+[[answer]]
+check = "logical-lines"
+path = "design/extension.md"
+question = "168 logical lines, past the trigger of 80. State \"the role\" in one sentence."
+file = "fa83026b6d66"
+answer = ""
+
+[[answer]]
+check = "tree-shape"
+path = "checks"
+question = "2 entries: fold into the parent folder."
+file = ""
+answer = "It stays: `checks` is named by the contract."
