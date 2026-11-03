@@ -2,6 +2,8 @@
 
 Step 3 of the review, first half. The case against is in [against](against.md). Terms are in [frame](frame.md). Every figure from a preprint is read from its abstract, so each is secondary.
 
+**Shape:** [state of the art](https://github.com/Tewf/reader-ergonomics-review/blob/a7f405f26f14cd188291e2a86b630121c4302a94/shapes/state-of-the-art.md)
+
 ## Answer first
 
 - The open extensions share a shape: one chat webview, an agent loop, rules files, approvals.

@@ -2,6 +2,8 @@
 
 Step 4 of the review. Terms are in [frame](frame.md).
 
+**Shape:** [position](https://github.com/Tewf/reader-ergonomics-review/blob/a7f405f26f14cd188291e2a86b630121c4302a94/shapes/position.md)
+
 ## Answer first
 
 Build beside all. The two parts no extension has, the tree of topics and the verdict in place, are native editor interfaces that need no agent extension to exist. The other three parts reach the model through one open extension, named in [baseline](baseline.md).

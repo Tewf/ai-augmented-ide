@@ -2,6 +2,8 @@
 
 Step 3 of the review, second half. It gathers the limits of [state of the art](state-of-the-art.md) and the failures people report. Terms are in [frame](frame.md).
 
+**Shape:** [against](https://github.com/Tewf/reader-ergonomics-review/blob/a7f405f26f14cd188291e2a86b630121c4302a94/shapes/against.md)
+
 ## Answer first
 
 - No study found measures a verdict shown in place, or a tree of topics, in an editor. The method's two distinctive parts are untested.

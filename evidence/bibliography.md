@@ -2,6 +2,8 @@
 
 Every work this repository cites, once: Key, citation, and a stable link. Repositories were read on 2026-11-02.
 
+**Shape:** [references](https://github.com/Tewf/reader-ergonomics-review/blob/a7f405f26f14cd188291e2a86b630121c4302a94/shapes/references.md)
+
 | Key | Citation | Link |
 |---|---|---|
 | ACP 2026 | Agent Client Protocol (2026). A protocol for connecting any editor to any agent. Repository, Apache-2.0 | https://github.com/agentclientprotocol/agent-client-protocol |

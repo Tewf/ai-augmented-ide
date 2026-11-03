@@ -56,8 +56,8 @@ answer = "Yes: `Position` is step 4 of the review, and the file answers it with 
 [[answer]]
 check = "name-content"
 path = "evidence/state-of-the-art/state-of-the-art.md"
-question = "the name 'state' and the opening are far apart in meaning (0.04): does the name predict the content?"
-file = "dc4c02c8774a"
+question = "the name 'state' and the opening are far apart in meaning (0.09): does the name predict the content?"
+file = "ed2742037e4d"
 answer = "Yes: the name is step 3's own, the field's term for a survey of what exists, and the file holds `What exists` and `What the studies say`."
 
 [[answer]]
@@ -259,7 +259,7 @@ answer = "The role is the proposed design of the extension and the spike that te
 [[answer]]
 check = "co-change"
 path = ".github/workflows/checks.yml"
-question = "changed together with CHANGELOG.md in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+question = "changed together with CHANGELOG.md in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
 file = "4821c7c03a99"
 answer = "The workflow stays in `.github/workflows`, where GitHub reads it. The changelog records each change to what CI runs, such as the step `Package the extension`, and the front page links the workflow."
 
@@ -290,3 +290,24 @@ path = "README.fr.md"
 question = "reads about equally as reference and how-to: one mode per document?"
 file = "cf034b03a197"
 answer = "One mode: understanding why. The page states the scope under `Périmètre` and the baseline under `La référence`; `L'installer` gives the commands, not a second mode."
+
+[[answer]]
+check = "co-change"
+path = "CHANGELOG.md"
+question = "changed together with decisions/README.md in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "32bb8ef3a685"
+answer = "They stay apart: `CHANGELOG.md` serves another role than the file it changes with, and they change together by construction, not by overlap."
+
+[[answer]]
+check = "document-mode"
+path = "evidence/state-of-the-art/review.md"
+question = "reads about equally as how-to and reference: one mode per document?"
+file = "c50ac5e32c7a"
+answer = "Reference: the file follows its shape and is consulted part by part; its heading `Review: what each open extension does of the method` names the one thing it holds."
+
+[[answer]]
+check = "name-content"
+path = "evidence/state-of-the-art/protocol.md"
+question = "the name 'protocol' and the opening are far apart in meaning (0.18): does the name predict the content?"
+file = "644f74892352"
+answer = "The name predicts the content: the file opens with the heading `Protocol: how the pool was built`, which says what it holds."

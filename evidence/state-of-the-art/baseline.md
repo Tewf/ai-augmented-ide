@@ -2,6 +2,8 @@
 
 Step 5 of the review. The baseline is one open extension, named, with the gap between it and the method listed. Terms are in [frame](frame.md).
 
+**Shape:** [baseline](https://github.com/Tewf/reader-ergonomics-review/blob/a7f405f26f14cd188291e2a86b630121c4302a94/shapes/baseline.md)
+
 ## Answer first
 
 The baseline is **Kilo Code** (Kilo 2026), MIT, active on 2026-11-02, version 7.8.25 of its VS Code extension. It holds two of the five features in part and none of the other three.

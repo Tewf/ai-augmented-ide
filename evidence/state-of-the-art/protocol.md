@@ -2,22 +2,32 @@
 
 A first pass, run on 2026-11-02. Terms are in [frame](frame.md); the pool is in [sources](sources.md).
 
+**Shape:** [protocol](https://github.com/Tewf/reader-ergonomics-review/blob/a7f405f26f14cd188291e2a86b630121c4302a94/shapes/protocol.md)
+
 ## Why grey literature
 
 The tools change monthly and the papers lag. Garousi 2019 asks whether the formal literature alone can answer; here it cannot. Licence, activity and features are facts of repositories and their documentation. So the pool mixes both kinds.
 
 ## Searches
 
-| Where | What was run | Result |
+| Where | String | Result |
 |---|---|---|
-| Repository host, by name | 17 repositories: the extensions, the protocols, the spec-driven kits, the terminal agents | licence, archive flag and last push read for each |
-| Preprint server, 4 strings | AI coding assistants with productivity or verification; coding agents with IDE or human-agent; experienced developers with AI tools; spec-driven development with agent context files | 37 records seen, 16 kept |
-| Repository issues, 2 strings | "tree view" in one project, "memory" in another | read, not used as evidence |
-| Source reading | the three open extensions that are alive, shallow copies of their default branches | see [review](review.md) |
+| Repository host, by name | 17 repositories: the extensions, the protocols, the spec-driven kits, the terminal agents | licence, archive flag and last push read for each of the 17 |
+| Preprint server | AI coding assistants with productivity or verification | count not recorded per string; 37 records seen and 16 kept across the four |
+| Preprint server | coding agents with IDE or human-agent | count not recorded per string; see the total above |
+| Preprint server | experienced developers with AI tools | count not recorded per string; one useful record in five |
+| Preprint server | spec-driven development with agent context files | count not recorded per string; see the total above |
+| Repository issues | "tree view" in one project | read, not used as evidence |
+| Repository issues | "memory" in another | read, not used as evidence |
+| Source reading | the three open extensions that are alive, shallow copies of their default branches | 3 read, see [review](review.md) |
 
 - No survey of open editor extensions for coding agents was found in the preprint strings. The nearest is Wang 2026c, a position paper.
 - Zero surveys on this exact topic means the strings may be wrong, not that none exists. This is a first pass.
 - The third string returned one useful record in five. It was stopped there.
+
+## Stopping rule
+
+Effort bounded: a first pass. A preprint string was stopped when about one record in five was useful, as with the third. The repository list was closed at 17 named projects.
 
 ## Rules
 

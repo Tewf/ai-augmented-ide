@@ -2,6 +2,8 @@
 
 The pool of the review, read on 2026-11-02. Searches are in [protocol](protocol.md); keys resolve in the [bibliography](../bibliography.md).
 
+**Shape:** [sources](https://github.com/Tewf/reader-ergonomics-review/blob/a7f405f26f14cd188291e2a86b630121c4302a94/shapes/sources.md)
+
 ## Count
 
 | Tier | Sources | Keys |

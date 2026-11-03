@@ -2,6 +2,8 @@
 
 Step 1 of the review, run on 2026-11-02. It states the problem, gives the field's names for it and defines each term once.
 
+**Shape:** [frame](https://github.com/Tewf/reader-ergonomics-review/blob/a7f405f26f14cd188291e2a86b630121c4302a94/shapes/frame.md)
+
 ## The problem in one sentence
 
 Which open extension of a code editor already drives a coding agent in the way the method asks, and which one is the base to build on or beside.

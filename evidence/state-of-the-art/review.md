@@ -2,6 +2,8 @@
 
 Step 2 of the review. The three live open extensions were read in the source of their default branches on 2026-11-02. Terms are in [frame](frame.md).
 
+**Shape:** [review](https://github.com/Tewf/reader-ergonomics-review/blob/a7f405f26f14cd188291e2a86b630121c4302a94/shapes/review.md)
+
 ## Answer first
 
 - None of the three contributes a tree view or shows a verdict beside what it checked.
