@@ -56,13 +56,27 @@ jobs:
         with:
           node-version: 24
           cache: npm
-          cache-dependency-path: repository/spike/package-lock.json
+          cache-dependency-path: |
+            repository/spike/package-lock.json
+            repository/extension/package-lock.json
       - name: Install the spike's dependencies
         working-directory: repository/spike
         run: npm ci
       - name: Run the unit tests under spike/
         working-directory: repository/spike
         run: npm test
+      - name: Install the extension's dependencies
+        working-directory: repository/extension
+        run: npm ci
+      - name: Compile the extension and run the readers' tests
+        working-directory: repository/extension
+        run: npm run test:unit
+      - name: Run the views' tests in an editor, on a virtual display
+        working-directory: repository/extension
+        run: xvfb-run -a npm run test:editor
+      - name: Package the extension
+        working-directory: repository/extension
+        run: npx vsce package
       - name: Check the repository, tiers program and meaning
         run: python3 standard/checks/run.py repository --tiers program,meaning --judge flag
       - name: List the questions left for judgment
