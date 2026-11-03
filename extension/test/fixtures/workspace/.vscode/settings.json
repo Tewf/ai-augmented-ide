@@ -1,0 +1,3 @@
+{
+  "aiAugmented.checkCommand": ["node", "tools/fake-runner.js", "${verdictsFile}"]
+}

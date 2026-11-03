@@ -29,6 +29,8 @@ family = ["reader-ergonomics",
 shared_links = []
 
 # The spike's installed packages and build output are not this repository's files, and nor is the project it runs the
-# baseline's sessions in (measure 5): that is test input, written in another project's shape.
+# baseline's sessions in (measure 5): that is test input, written in another project's shape. The extension's
+# fixture workspace is the same kind of input, and its dependencies, build output and downloaded editor are not files of this repository.
 [scope]
-exclude = ["spike/node_modules/", "spike/out/", "spike/fixtures/project/"]
+exclude = ["spike/node_modules/", "spike/out/", "spike/fixtures/project/",
+           "extension/node_modules/", "extension/out/", "extension/.vscode-test/", "extension/test/fixtures/"]

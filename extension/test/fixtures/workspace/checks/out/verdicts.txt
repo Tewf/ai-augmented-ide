@@ -1,0 +1,7 @@
+error links docs/rounding.md:6 a link does not resolve: missing.md
+error topic docs/loose.md not listed by its containing topic docs/README.md: a reader cannot reach it from the root
+warning topic docs/naming.md:1 no summary label: the next block stands for it
+error links gone/file.md:7 a link does not resolve: other.md
+judgment logical-lines docs/rounding.md:1 168 logical lines, past the trigger of 80.
+summary errors=3 warnings=1 judgments=1 seconds=0.4 tiers=program
+exit 1

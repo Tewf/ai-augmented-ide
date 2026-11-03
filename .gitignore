@@ -18,3 +18,11 @@ _standard/
 node_modules/
 out/
 spike/out/
+
+# The extension: dependencies, build output, the editor the tests download, and the packaged file
+node_modules/
+out/
+*.vsix
+.vscode-test/
+# ...except the extension's fixture workspace, which holds a checks/out/ of its own as test input
+!extension/test/fixtures/workspace/checks/out/

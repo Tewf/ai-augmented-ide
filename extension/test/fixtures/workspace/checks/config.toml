@@ -1,0 +1,5 @@
+extends = "reader-ergonomics"
+
+[topic]
+files = ["README.md", "docs/"]   # the tree of this project
+root = "README.md"

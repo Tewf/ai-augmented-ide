@@ -1,0 +1,158 @@
+{
+  "name": "ai-augmented",
+  "displayName": "AI-augmented",
+  "description": "The project as a tree of topics, each check's verdict where it stands, the questions that are yours, and a hand-over note for the agent.",
+  "version": "0.2.0",
+  "publisher": "tewf",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tewf/ai-augmented-ide.git"
+  },
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./out/src/extension.js",
+  "activationEvents": [
+    "workspaceContains:checks/config.toml",
+    "workspaceContains:START.md"
+  ],
+  "scripts": {
+    "compile": "tsc -p .",
+    "test:unit": "npm run compile && node --test \"out/test/unit/*.test.js\"",
+    "test:editor": "npm run compile && node out/test/integration/run.js",
+    "test": "npm run test:unit && npm run test:editor",
+    "package": "npm run compile && vsce package"
+  },
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "aiAugmented",
+          "title": "AI-augmented",
+          "icon": "$(book)"
+        }
+      ]
+    },
+    "views": {
+      "aiAugmented": [
+        {
+          "id": "aiAugmented.topics",
+          "name": "Topics"
+        },
+        {
+          "id": "aiAugmented.verdicts",
+          "name": "Verdicts"
+        },
+        {
+          "id": "aiAugmented.questions",
+          "name": "Questions"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "aiAugmented.verdicts",
+        "contents": "No verdicts file yet.\n[Run the checks](command:aiAugmented.runChecks)"
+      },
+      {
+        "view": "aiAugmented.questions",
+        "contents": "No open question."
+      }
+    ],
+    "commands": [
+      {
+        "command": "aiAugmented.openProjectTree",
+        "title": "AI-augmented: Open the project tree"
+      },
+      {
+        "command": "aiAugmented.refresh",
+        "title": "AI-augmented: Refresh the verdicts"
+      },
+      {
+        "command": "aiAugmented.writeHandover",
+        "title": "AI-augmented: Write the hand-over note"
+      },
+      {
+        "command": "aiAugmented.runChecks",
+        "title": "AI-augmented: Run the checks"
+      },
+      {
+        "command": "aiAugmented.newTask",
+        "title": "AI-augmented: Open a new task with the hand-over note"
+      }
+    ],
+    "configuration": {
+      "title": "AI-augmented",
+      "properties": {
+        "aiAugmented.topicFiles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "Paths and globs of the topic files. Empty: read [topic] files in checks/config.toml, else every markdown file."
+        },
+        "aiAugmented.rootTopic": {
+          "type": "string",
+          "default": "",
+          "description": "The root topic. Empty: read [topic] root in checks/config.toml, else README.md."
+        },
+        "aiAugmented.verdictsFile": {
+          "type": "string",
+          "default": "checks/out/verdicts.txt",
+          "description": "The runner's verdicts file (checks/run.py . --out FILE)."
+        },
+        "aiAugmented.questionsFile": {
+          "type": "string",
+          "default": "checks/out/needs-judgment.md",
+          "description": "The file that lists the questions left for the person."
+        },
+        "aiAugmented.checkCommand": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "python3",
+            "checks/run.py",
+            ".",
+            "--out",
+            "${verdictsFile}",
+            "--judge",
+            "flag"
+          ],
+          "description": "The command that runs the checks, run in the workspace folder without a shell. ${verdictsFile} is replaced by the verdicts file."
+        },
+        "aiAugmented.runOnSave": {
+          "type": "boolean",
+          "default": false,
+          "description": "Run the checks when a file in the workspace is saved."
+        },
+        "aiAugmented.startFile": {
+          "type": "string",
+          "default": "START.md"
+        },
+        "aiAugmented.memoryIndex": {
+          "type": "string",
+          "default": "memory/INDEX.md"
+        },
+        "aiAugmented.decisionLog": {
+          "type": "string",
+          "default": "decisions.log",
+          "description": "The decision log whose last lines the hand-over note carries."
+        }
+      }
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "@types/vscode": "~1.90.0",
+    "@vscode/test-electron": "^3.1.0",
+    "@vscode/vsce": "^4.1.0",
+    "typescript": "^7.0.2"
+  }
+}
