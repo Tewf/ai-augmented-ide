@@ -129,7 +129,7 @@ Each view reads files. None of them stores what it read.
 **The verdicts.**
 
 - A verdict is read from a file of lines in the runner's form: `kind check path:line message`
-  ([the runner](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/checks/run.py)).
+  ([the runner](https://github.com/Tewf/reader-ergonomics/blob/2e5b6f0c3e67d2dc8195a63cf882d46170e79a5a/checks/run.py)).
 - An error becomes an error diagnostic and a warning becomes a warning diagnostic, at the line named, in the editor's own list.
 - A verdict without a line sits on the file's first line. A verdict for a file that does not exist sits on the root topic.
 - The message is shown as the runner wrote it. The extension never rewords a reason.

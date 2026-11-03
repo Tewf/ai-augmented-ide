@@ -32,7 +32,7 @@ release ([tags](https://github.com/Tewf/ai-augmented-ide/tags)), so a later chan
 
    ```sh
    git clone https://github.com/Tewf/reader-ergonomics ../reader-ergonomics
-   git -C ../reader-ergonomics checkout 4f99372093729dacf982e9174e94f6b8793c513d   # v1.20.0
+   git -C ../reader-ergonomics checkout 2e5b6f0c3e67d2dc8195a63cf882d46170e79a5a   # v1.21.0
    python3 ../reader-ergonomics/checks/run.py .
    ```
 
@@ -42,7 +42,7 @@ A disagreement has three places to go:
 - an extension, when it is about a genre;
 - an issue on [this repository](https://github.com/Tewf/ai-augmented-ide/issues), when its evidence or its design is wrong.
 
-The standard's section, [Take your own version](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/README.md#take-your-own-version), gives the rest.
+The standard's section, [Take your own version](https://github.com/Tewf/reader-ergonomics/blob/2e5b6f0c3e67d2dc8195a63cf882d46170e79a5a/README.md#take-your-own-version), gives the rest.
 
 ## Install it
 
@@ -94,7 +94,7 @@ digraph where_it_sits {
 
 - **It implements [ai-augmented-project](https://github.com/Tewf/ai-augmented-project)** and nothing of its own: a
   choice about the method is made there, with a record, then implemented here.
-- **It obeys [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/standard.md)** (v1.20.0) for its documents and runs its checks in CI; the code
+- **It obeys [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/2e5b6f0c3e67d2dc8195a63cf882d46170e79a5a/standard.md)** (v1.21.0) for its documents and runs its checks in CI; the code
   will follow [reader-ergonomics-software-design](https://github.com/Tewf/reader-ergonomics-software-design): a design
   document before building, a record per choice.
 - **It links down only.** The family's map is [ai-augmented](https://github.com/Tewf/ai-augmented).

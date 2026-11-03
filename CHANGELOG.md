@@ -7,6 +7,7 @@ A pin move is recorded here, not in decisions/.
 
 ### Added
 
+- Pinned reader-ergonomics v1.21.0 (`2e5b6f0`), from v1.20.0 (`4f99372`): duplication skips the lines a declared shape prescribes
 - The extension, in `extension/`: three views (topics, verdicts, questions), the verdicts as diagnostics, five commands,
   a hand-over note written under `.ai-augmented/`, and an adapter that opens a new task in the baseline. TypeScript on
   Node 24, Apache-2.0, packaged as `ai-augmented-0.2.0.vsix`; not committed, not published.
