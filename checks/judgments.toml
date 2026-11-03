@@ -115,3 +115,73 @@ path = "README.fr.md"
 question = "reads about equally as reference and how-to: one mode per document?"
 file = "dd157773c1f7"
 answer = "Reference: la page d'accueil, lue pour `La conception`, `La référence` et le `Périmètre`. Sa seule tâche, `Vérifier`, tient en deux commandes."
+
+[[answer]]
+check = "tree-shape"
+path = "spike/fixtures"
+question = "2 entries: fold into the parent folder, unless this folder is one record of a collection (a job, a chapter, a topic)."
+file = ""
+answer = "It stays: `spike/fixtures` holds the verdicts and judgments files that the unit tests read, a folder of inputs kept apart from the code they test."
+
+[[answer]]
+check = "tree-shape"
+path = "spike/measure"
+question = "2 entries: fold into the parent folder, unless this folder is one record of a collection (a job, a chapter, a topic)."
+file = ""
+answer = "It stays: `spike/measure` holds the script of the five measures and the reference script that the check's own parent function answers, two files for one run."
+
+[[answer]]
+check = "tree-shape"
+path = "spike/src"
+question = "2 entries: fold into the parent folder, unless this folder is one record of a collection (a job, a chapter, a topic)."
+file = ""
+answer = "It stays: `spike/src` is the folder the compiler and the extension manifest name for the source, with the readers apart from the editor layer."
+
+[[answer]]
+check = "tree-shape"
+path = "spike/test"
+question = "1 entries: fold into the parent folder, unless this folder is one record of a collection (a job, a chapter, a topic)."
+file = ""
+answer = "It stays: `spike/test` is the folder the compiler and the test runner read, and it grows one file per reader."
+
+[[answer]]
+check = "logical-lines"
+path = "README.fr.md"
+question = "89 logical lines, past the trigger of 80. State this file's role in one sentence. If the sentence needs 'and', split the file; if not, it may stay."
+file = "89ee492e503f"
+answer = "It may stay: la page d'accueil, qui dit le `Périmètre`, la référence, la conception et l'essai en tables courtes pour qui arrive sans rien connaître."
+
+[[answer]]
+check = "logical-lines"
+path = "README.md"
+question = "88 logical lines, past the trigger of 80. State this file's role in one sentence. If the sentence needs 'and', split the file; if not, it may stay."
+file = "6cff1314e962"
+answer = "It may stay: the front page, which gives the `Scope`, the baseline, the design and the spike in short tables for a reader who arrives knowing nothing."
+
+[[answer]]
+check = "logical-lines"
+path = "design/extension.md"
+question = "168 logical lines, past the trigger of 80. State this file's role in one sentence. If the sentence needs 'and', split the file; if not, it may stay."
+file = "fa83026b6d66"
+answer = "It may stay: the design document of one extension, whose `Design` section holds five decisions that each cite the others, and the checks pass with it whole."
+
+[[answer]]
+check = "co-change"
+path = "README.fr.md"
+question = "changed together with decisions/README.md in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "89ee492e503f"
+answer = "They link already: the front page lists each record, and `decisions/README.md` is the index of the records; moving either would split the front page from its index."
+
+[[answer]]
+check = "co-change"
+path = "README.md"
+question = "changed together with decisions/README.md in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "6cff1314e962"
+answer = "They link already: the front page lists each record, and `decisions/README.md` is the index of the records; moving either would split the front page from its index."
+
+[[answer]]
+check = "document-mode"
+path = "README.fr.md"
+question = "reads about equally as reference and how-to: one mode per document?"
+file = "89ee492e503f"
+answer = "Reference: la page d'accueil, lue pour `L'essai`, `La référence` et le `Périmètre`. Sa seule tâche, `Vérifier`, tient en deux commandes."
