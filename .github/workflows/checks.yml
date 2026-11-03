@@ -52,6 +52,17 @@ jobs:
           for name in $(python3 -c "import tomllib; print(*tomllib.load(open('repository/checks/config.toml', 'rb'))['bibliography_keys']['family'])"); do
             git clone --quiet --depth 1 "https://github.com/Tewf/$name" "$name"
           done
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: repository/spike/package-lock.json
+      - name: Install the spike's dependencies
+        working-directory: repository/spike
+        run: npm ci
+      - name: Run the unit tests under spike/
+        working-directory: repository/spike
+        run: npm test
       - name: Check the repository, tiers program and meaning
         run: python3 standard/checks/run.py repository --tiers program,meaning --judge flag
       - name: List the questions left for judgment

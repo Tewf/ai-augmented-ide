@@ -10,11 +10,40 @@ an open extension where one already does part of the job.
 
 This page in French: [README.fr.md](README.fr.md).
 
-> **Status (2026-11-03):** the review of the state of the art is written, the baseline is named, and a design document
-> of the extension is proposed, and a spike exists; nothing is shipped, and nothing will be until the design of ai-augmented-project is approved. The name is provisional. It is not an official standard, not a peer-reviewed study and not a new result.
+> **Status (2026-11-03), release 0.1.0:** the review of the state of the art is written, the baseline is named, and a design document
+> of the extension is proposed, and a spike exists, with three of its five measures run and passed; nothing is shipped, and nothing will be until the design of ai-augmented-project is approved. The name is provisional. It is not an official standard, not a peer-reviewed study and not a new result.
 >
 > **How it is made:** with Claude, an AI assistant by Anthropic, under the maintainer's direction, the way
 > reader-ergonomics was made. Corrections are welcome as issues.
+
+## Take it
+
+No extension is shipped, so there is nothing to install. What can be taken is the way this repository is built: a
+design document before the code, a record per choice, a spike with its measures fixed in advance. Copy from a tagged
+release ([tags](https://github.com/Tewf/ai-augmented-ide/tags)), so a later change here never changes your copy.
+
+1. Copy the [design document shape](https://github.com/Tewf/reader-ergonomics-software-design/blob/48b497ba591e9d6ffc962b1d08448930fa8158de/shapes/design-document.md)
+   and fill it as [design/extension.md](design/extension.md) does; keep one record per choice in `decisions/`, in the
+   [decision record shape](https://github.com/Tewf/reader-ergonomics-software-design/blob/48b497ba591e9d6ffc962b1d08448930fa8158de/shapes/decision-record.md).
+2. If you test a design with a spike, write its measures and thresholds in the design first and its results in a
+   file of its own, as [spike/RESULTS.md](spike/RESULTS.md) does.
+3. Add `checks/config.toml` with `extends = "reader-ergonomics"`, and a `[shape_conformance]` table for the shapes you
+   use, as this repository's own does.
+4. Pin the standard by commit and run the checks, one command:
+
+   ```sh
+   git clone https://github.com/Tewf/reader-ergonomics ../reader-ergonomics
+   git -C ../reader-ergonomics checkout b9732b9814c71768f722691f3c5049ec2b8ed378   # v1.19.2
+   python3 ../reader-ergonomics/checks/run.py .
+   ```
+
+A disagreement has three places to go:
+
+- your reader style, as an override with its reason, when it is about your reader;
+- an extension, when it is about a genre;
+- an issue on [this repository](https://github.com/Tewf/ai-augmented-ide/issues), when its evidence or its design is wrong.
+
+The standard's section, [Take your own version](https://github.com/Tewf/reader-ergonomics/blob/b9732b9814c71768f722691f3c5049ec2b8ed378/README.md#take-your-own-version), gives the rest.
 
 ## Where it sits
 

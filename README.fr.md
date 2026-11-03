@@ -10,11 +10,41 @@ bâtie sur une extension libre là où une fait déjà une partie du travail.
 
 Cette page en anglais : [README.md](README.md). Les deux versions suivent le même état.
 
-> **État (2026-11-03) :** la revue de l'état de l'art est écrite, la référence est nommée, et un document de conception
-> de l'extension est proposé, et un essai existe ; rien n'est livré, et rien ne le sera avant que la conception d'ai-augmented-project soit approuvée. Le nom est provisoire. Ce n'est ni une norme officielle, ni une étude relue par des pairs, ni un résultat nouveau.
+> **État (2026-11-03), version 0.1.0 :** la revue de l'état de l'art est écrite, la référence est nommée, et un document de conception
+> de l'extension est proposé, et un essai existe, dont trois des cinq mesures sont menées et réussies ; rien n'est livré, et rien ne le sera avant que la conception d'ai-augmented-project soit approuvée. Le nom est provisoire. Ce n'est ni une norme officielle, ni une étude relue par des pairs, ni un résultat nouveau.
 >
 > **Comment il est fait :** avec Claude, un assistant IA d'Anthropic, sous la direction du mainteneur, comme
 > reader-ergonomics. Les corrections sont bienvenues sous forme d'issues.
+
+## L'adopter
+
+Aucune extension n'est livrée, il n'y a donc rien à installer. Ce qu'on peut prendre, c'est la manière dont ce dépôt
+est construit : un document de conception avant le code, une fiche par choix, un essai dont les mesures sont fixées
+d'avance. Copiez depuis une version étiquetée ([tags](https://github.com/Tewf/ai-augmented-ide/tags)), pour qu'un
+changement ultérieur ici ne change jamais votre copie.
+
+1. Copiez la [forme du document de conception](https://github.com/Tewf/reader-ergonomics-software-design/blob/48b497ba591e9d6ffc962b1d08448930fa8158de/shapes/design-document.md)
+   et remplissez-la comme le fait [design/extension.md](design/extension.md) ; gardez une fiche par choix dans
+   `decisions/`, selon la [forme de la fiche de décision](https://github.com/Tewf/reader-ergonomics-software-design/blob/48b497ba591e9d6ffc962b1d08448930fa8158de/shapes/decision-record.md).
+2. Si vous éprouvez une conception par un essai, écrivez ses mesures et ses seuils dans la conception d'abord, et ses
+   résultats dans un fichier à part, comme le fait [spike/RESULTS.md](spike/RESULTS.md).
+3. Ajoutez `checks/config.toml` avec `extends = "reader-ergonomics"`, et une table `[shape_conformance]` pour les
+   formes que vous utilisez, comme celle de ce dépôt.
+4. Épinglez la norme par commit et lancez les vérifications, une seule commande :
+
+   ```sh
+   git clone https://github.com/Tewf/reader-ergonomics ../reader-ergonomics
+   git -C ../reader-ergonomics checkout b9732b9814c71768f722691f3c5049ec2b8ed378   # version 1.19.2
+   python3 ../reader-ergonomics/checks/run.py chemin/vers/votre/dépôt
+   ```
+
+Un désaccord a trois destinations :
+
+- votre style de lecteur, comme dérogation motivée, s'il porte sur votre lecteur ;
+- une extension, s'il porte sur un genre ;
+- une issue sur [ce dépôt](https://github.com/Tewf/ai-augmented-ide/issues), quand ses preuves ou sa conception sont fausses.
+
+La section de la norme, [Take your own version](https://github.com/Tewf/reader-ergonomics/blob/b9732b9814c71768f722691f3c5049ec2b8ed378/README.md#take-your-own-version), donne le reste.
 
 ## Où il se place
 

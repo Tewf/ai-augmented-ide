@@ -185,3 +185,31 @@ path = "README.fr.md"
 question = "reads about equally as reference and how-to: one mode per document?"
 file = "89ee492e503f"
 answer = "Reference: la page d'accueil, lue pour `L'essai`, `La référence` et le `Périmètre`. Sa seule tâche, `Vérifier`, tient en deux commandes."
+
+[[answer]]
+check = "logical-lines"
+path = "README.fr.md"
+question = "105 logical lines, past the trigger of 80. State this file's role in one sentence. If the sentence needs 'and', split the file; if not, it may stay."
+file = "3249099a42b1"
+answer = "The role is the French front page, kept in step with `README.md`; it stays whole, its parts being `L'adopter`, `Périmètre` and `Contenu`."
+
+[[answer]]
+check = "logical-lines"
+path = "README.md"
+question = "104 logical lines, past the trigger of 80. State this file's role in one sentence. If the sentence needs 'and', split the file; if not, it may stay."
+file = "251430bb2aa7"
+answer = "The role is the front page: what the repository is, how to take it and what the review found. It stays whole; `Take it`, `Scope` and `Contents` are its parts."
+
+[[answer]]
+check = "paraphrase"
+path = "README.fr.md"
+question = "says nearly what README.md (line 34) says, similarity 0.94: one fact in two places?"
+file = "3249099a42b1"
+answer = "Not duplication: the French page is the same page in French, kept in step on purpose (`Cette page en anglais`)."
+
+[[answer]]
+check = "document-mode"
+path = "README.fr.md"
+question = "reads about equally as reference and how-to: one mode per document?"
+file = "3249099a42b1"
+answer = "One mode: understanding why. The page states the scope under `Périmètre` and the baseline under `La référence`; `L'adopter` points to the copy and the command, not a second mode."
