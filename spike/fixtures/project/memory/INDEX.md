@@ -1,0 +1,2 @@
+- [Ledger rounding](ledger-rounding.md): the ledger rounds half to even, in cents.
+- [Note naming](note-naming.md): a note name starts with its date.

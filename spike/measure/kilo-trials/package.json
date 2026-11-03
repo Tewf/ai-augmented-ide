@@ -1,0 +1,11 @@
+{
+  "name": "kilo-trials",
+  "displayName": "Measure 4 driver",
+  "version": "0.0.1",
+  "publisher": "spike",
+  "license": "Apache-2.0",
+  "private": true,
+  "engines": { "vscode": "^1.105.0" },
+  "main": "./extension.js",
+  "activationEvents": ["onStartupFinished"]
+}
