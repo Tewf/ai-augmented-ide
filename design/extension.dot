@@ -1,0 +1,27 @@
+// What the extension reads, shows and hands over. Colours: files white, the extension green, the machine's
+// programs blue, the agent orange, one colour per kind, named in its box.
+digraph extension {
+  graph [rankdir=LR, nodesep=0.35, ranksep=0.8, bgcolor="white", pad=0.2, fontname="Inter"];
+  node  [shape=box, style="rounded,filled", fontname="Inter", fontsize=13, margin="0.2,0.1", penwidth=1.5, fontcolor="#1F2328"];
+  edge  [fontname="Inter", fontsize=11, color="#3D434B", fontcolor="#55575F", penwidth=1.3, arrowsize=0.8];
+  T [label=<<b>topic files</b><br/><font point-size="11" color="#55575F">the files the topic check reads</font>>, fillcolor="#FFFFFF", color="#3D434B"];
+  V [label=<<b>verdicts file</b><br/><font point-size="11" color="#55575F">the checks' output, one line each</font>>, fillcolor="#FFFFFF", color="#3D434B"];
+  Q [label=<<b>question files</b><br/><font point-size="11" color="#55575F">open judgments, the method's queue</font>>, fillcolor="#FFFFFF", color="#3D434B"];
+  S [label=<<b>start file, memory index</b><br/><font point-size="11" color="#55575F">written by the method's parties</font>>, fillcolor="#FFFFFF", color="#3D434B"];
+  X [label=<<b>extension</b><br/><font point-size="11" color="#55575F">keeps no state, calls no model,</font><br/><font point-size="11" color="#55575F">decides nothing</font>>, fillcolor="#E6F2EA", color="#2E7D4F", penwidth=2.6];
+  W1 [label=<<b>tree of topics</b>>, fillcolor="#E6F2EA", color="#2E7D4F"];
+  W2 [label=<<b>verdicts in place</b><br/><font point-size="11" color="#55575F">diagnostics and badges</font>>, fillcolor="#E6F2EA", color="#2E7D4F"];
+  W3 [label=<<b>questions</b><br/><font point-size="11" color="#55575F">options, default first</font>>, fillcolor="#E6F2EA", color="#2E7D4F"];
+  B [label=<<b>brief</b><br/><font point-size="11" color="#55575F">paths and lines, derived, disposable</font>>, fillcolor="#FFFFFF", color="#3D434B", style="rounded,filled,dashed"];
+  A [label=<<b>agent</b><br/><font point-size="11" color="#55575F">Kilo Code, or any agent that reads files</font>>, fillcolor="#FBEDE4", color="#B4541A"];
+  C [label=<<b>checks</b><br/><font point-size="11" color="#55575F">the machine: pass or fail</font>>, fillcolor="#E8EEF8", color="#2F5DA8"];
+  T -> X [label=" reads"];
+  V -> X [label=" reads"];
+  Q -> X [label=" reads"];
+  S -> B [label=" named by"];
+  X -> W1; X -> W2; X -> W3;
+  X -> B [label=" writes"];
+  B -> A [label=" read first"];
+  C -> V [label=" writes"];
+  {rank=same; T; V; Q; S}
+}

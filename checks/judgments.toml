@@ -101,3 +101,17 @@ path = "evidence/state-of-the-art/position.md"
 question = "the name 'position' and the opening are far apart in meaning (0.11): does the name predict the content?"
 file = "ab000eaec178"
 answer = "Yes: the name is the file's subject, and the opening states that position in one line, `Build beside all`. The low similarity score measures the vocabulary of the opening, not its meaning."
+
+[[answer]]
+check = "logical-lines"
+path = "design/extension.md"
+question = "167 logical lines, past the trigger of 80. State this file's role in one sentence. If the sentence needs 'and', split the file; if not, it may stay."
+file = "ff4221c404b9"
+answer = "It stays: its one role is to propose the thin extension for a reviewer to adopt, as the `Decision asked` line says. The tables of options that lost sit in each of the five decisions under `Design`, and the shape keeps them in the document that proposes."
+
+[[answer]]
+check = "document-mode"
+path = "README.fr.md"
+question = "reads about equally as reference and how-to: one mode per document?"
+file = "dd157773c1f7"
+answer = "Reference: la page d'accueil, lue pour `La conception`, `La référence` et le `Périmètre`. Sa seule tâche, `Vérifier`, tient en deux commandes."
