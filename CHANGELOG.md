@@ -3,7 +3,7 @@
 Every release of this repository, and the releases it pins, newest first, in the form of [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 A pin move is recorded here, not in decisions/.
 
-## [Unreleased]
+## [0.2.0] - 2026-11-04
 
 ### Added
 
@@ -18,6 +18,7 @@ A pin move is recorded here, not in decisions/.
 
 - The front pages say the extension can be installed from a file, and show the spike's five measures run.
 - Pinned reader-ergonomics v1.20.0 (`4f99372`), from v1.19.2 (`b9732b9`): the runner's verdicts file (`--out`), and hand-written llms.txt lines kept through a rebuild
+- Tag v0.2.0 and a GitHub release of the same name.
 
 ## [0.1.0] - 2026-11-03
 

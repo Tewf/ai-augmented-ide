@@ -5,8 +5,8 @@ message: >-
   assistant by Anthropic. It is not an official standard, not peer-reviewed,
   and not a new result.
 title: "ai-augmented-ide (work in progress)"
-version: 0.1.0
-date-released: "2026-11-03"
+version: 0.2.0
+date-released: 2026-11-04
 abstract: >-
   The software that implements ai-augmented-project inside the editor: a VS Code extension that shows the person the project as topics, the checkers' verdicts in place, and the questions that are theirs, and hands the model what the method says. Its review of the state of the art names a baseline, a design document and a spike follow; nothing is shipped before the method's design is approved.
 type: software
