@@ -27,7 +27,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: Tewf/reader-ergonomics
-          ref: 2e5b6f0c3e67d2dc8195a63cf882d46170e79a5a   # v1.21.0 (reader-ergonomics extending.md, Versions)
+          ref: 65e42472e2d4cbfd994c2a86e95a47e5dc7301ca   # v1.24.2 (reader-ergonomics extending.md, Versions)
           path: _standard
           sparse-checkout: site.css
           sparse-checkout-cone-mode: false

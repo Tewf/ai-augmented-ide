@@ -13,7 +13,7 @@ stylesheets = []
 [sufficient_contrast]
 stylesheets = []
 
-# The headings the standard's decision-record shape requires (reader-ergonomics v1.21.0, shapes/decision-record.md).
+# The headings the standard's decision-record shape requires (reader-ergonomics v1.24.2, shapes/decision-record.md).
 [shape_conformance]
 shapes = [{ name = "decision record", files = ["decisions/0*.md"], required = ["Context", "Decision", "Consequences", "See also"] }]
 
